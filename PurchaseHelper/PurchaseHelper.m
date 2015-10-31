@@ -8,9 +8,7 @@
 
 #import "PurchaseHelper.h"
 
-@import SSKeychain;
-
-#import "Constants.h"
+#import <SSKeychain/SSKeychain.h>
 
 
 NSString* const ProductPurchasedNotification = @"ProductPurchased";
