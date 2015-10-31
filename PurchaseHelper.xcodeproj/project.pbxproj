@@ -9,13 +9,15 @@
 /* Begin PBXBuildFile section */
 		5BBC8CF81BE57D3600371899 /* PurchaseHelper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BBC8CED1BE57D3600371899 /* PurchaseHelper.framework */; };
 		5BBC8CFD1BE57D3600371899 /* PurchaseHelperTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BBC8CFC1BE57D3600371899 /* PurchaseHelperTests.m */; };
-		5BBC8D0E1BE57F0100371899 /* PurchaseHelper-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5BBC8D071BE57F0100371899 /* PurchaseHelper-umbrella.h */; };
-		5BBC8D0F1BE57F0100371899 /* PurchaseHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = 5BBC8D081BE57F0100371899 /* PurchaseHelper.h */; };
+		5BBC8D0E1BE57F0100371899 /* PurchaseHelper-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5BBC8D071BE57F0100371899 /* PurchaseHelper-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5BBC8D0F1BE57F0100371899 /* PurchaseHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = 5BBC8D081BE57F0100371899 /* PurchaseHelper.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5BBC8D101BE57F0100371899 /* PurchaseHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BBC8D091BE57F0100371899 /* PurchaseHelper.m */; };
-		5BBC8D111BE57F0100371899 /* PurchaseItemCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 5BBC8D0A1BE57F0100371899 /* PurchaseItemCell.h */; };
+		5BBC8D111BE57F0100371899 /* PurchaseItemCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 5BBC8D0A1BE57F0100371899 /* PurchaseItemCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5BBC8D121BE57F0100371899 /* PurchaseItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BBC8D0B1BE57F0100371899 /* PurchaseItemCell.m */; };
-		5BBC8D131BE57F0100371899 /* PurchasesViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 5BBC8D0C1BE57F0100371899 /* PurchasesViewController.h */; };
+		5BBC8D131BE57F0100371899 /* PurchasesViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 5BBC8D0C1BE57F0100371899 /* PurchasesViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5BBC8D141BE57F0100371899 /* PurchasesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BBC8D0D1BE57F0100371899 /* PurchasesViewController.m */; };
+		5BBC8D171BE5817C00371899 /* UIControl+RepresentedObject.h in Headers */ = {isa = PBXBuildFile; fileRef = 5BBC8D151BE5817C00371899 /* UIControl+RepresentedObject.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		5BBC8D181BE5817C00371899 /* UIControl+RepresentedObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BBC8D161BE5817C00371899 /* UIControl+RepresentedObject.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +43,8 @@
 		5BBC8D0B1BE57F0100371899 /* PurchaseItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PurchaseItemCell.m; sourceTree = "<group>"; };
 		5BBC8D0C1BE57F0100371899 /* PurchasesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PurchasesViewController.h; sourceTree = "<group>"; };
 		5BBC8D0D1BE57F0100371899 /* PurchasesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PurchasesViewController.m; sourceTree = "<group>"; };
+		5BBC8D151BE5817C00371899 /* UIControl+RepresentedObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIControl+RepresentedObject.h"; sourceTree = "<group>"; };
+		5BBC8D161BE5817C00371899 /* UIControl+RepresentedObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIControl+RepresentedObject.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +87,8 @@
 		5BBC8CEF1BE57D3600371899 /* PurchaseHelper */ = {
 			isa = PBXGroup;
 			children = (
+				5BBC8D151BE5817C00371899 /* UIControl+RepresentedObject.h */,
+				5BBC8D161BE5817C00371899 /* UIControl+RepresentedObject.m */,
 				5BBC8D071BE57F0100371899 /* PurchaseHelper-umbrella.h */,
 				5BBC8D081BE57F0100371899 /* PurchaseHelper.h */,
 				5BBC8D091BE57F0100371899 /* PurchaseHelper.m */,
@@ -114,6 +120,7 @@
 				5BBC8D131BE57F0100371899 /* PurchasesViewController.h in Headers */,
 				5BBC8D0E1BE57F0100371899 /* PurchaseHelper-umbrella.h in Headers */,
 				5BBC8D0F1BE57F0100371899 /* PurchaseHelper.h in Headers */,
+				5BBC8D171BE5817C00371899 /* UIControl+RepresentedObject.h in Headers */,
 				5BBC8D111BE57F0100371899 /* PurchaseItemCell.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -216,6 +223,7 @@
 			files = (
 				5BBC8D141BE57F0100371899 /* PurchasesViewController.m in Sources */,
 				5BBC8D101BE57F0100371899 /* PurchaseHelper.m in Sources */,
+				5BBC8D181BE5817C00371899 /* UIControl+RepresentedObject.m in Sources */,
 				5BBC8D121BE57F0100371899 /* PurchaseItemCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

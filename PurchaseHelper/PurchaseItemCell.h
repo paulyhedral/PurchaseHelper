@@ -11,9 +11,9 @@
 
 @interface PurchaseItemCell : UITableViewCell
 
-@property (strong, nonatomic) IBOutlet UILabel *nameLabel;
-@property (strong, nonatomic) IBOutlet UILabel *descriptionLabel;
-@property (strong, nonatomic) IBOutlet UILabel *priceLabel;
-@property (strong, nonatomic) IBOutlet UIButton *buyButton;
+@property (strong, nonnull, nonatomic) IBOutlet UILabel *nameLabel;
+@property (strong, nullable, nonatomic) IBOutlet UILabel *descriptionLabel;
+@property (strong, nonnull, nonatomic) IBOutlet UILabel *priceLabel;
+@property (strong, nonnull, nonatomic) IBOutlet UIButton *buyButton;
 
 @end

@@ -16,4 +16,6 @@ FOUNDATION_EXPORT const unsigned char PurchaseHelperVersionString[];
 
 // In this header, you should import all the public headers of your framework using statements like #import <PurchaseHelper/PublicHeader.h>
 
-
+#import <PurchaseHelper/PurchaseHelper.h>
+#import <PurchaseHelper/PurchaseItemCell.h>
+#import <PurchaseHelper/PurchasesViewController.h>

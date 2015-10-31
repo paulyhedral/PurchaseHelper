@@ -21,7 +21,7 @@ UIKIT_EXTERN NSString* const ProductPurchasedNotificationProductIdentifierKey;
 @property (nonatomic, nonnull, copy) NSString* keychainAccount;
 
 - (nonnull instancetype)initWithProductIdentifiers:(nonnull NSSet*)productIdentifiers
-                           keychainAccount:(nonnull NSString*)keychainAccount NS_DESIGNATED_INITIALIZER;
+                                   keychainAccount:(nonnull NSString*)keychainAccount NS_DESIGNATED_INITIALIZER;
 
 - (void)requestProductsWithCompletionHandler:(nonnull RequestProductsCompletionHandler)completionHandler;
 - (void)buyProduct:(nonnull SKProduct*)product;
