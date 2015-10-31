@@ -12,8 +12,8 @@
 
 typedef void (^RequestProductsCompletionHandler)(BOOL success,  NSArray* _Nonnull products);
 
-UIKIT_EXTERN NSString* const ProductPurchasedNotification;
-UIKIT_EXTERN NSString* const ProductPurchasedNotificationProductIdentifierKey;
+UIKIT_EXTERN NSString* _Nonnull const ProductPurchasedNotification;
+UIKIT_EXTERN NSString* _Nonnull const ProductPurchasedNotificationProductIdentifierKey;
 
 @interface PurchaseHelper : NSObject
 <SKProductsRequestDelegate, SKPaymentTransactionObserver>
