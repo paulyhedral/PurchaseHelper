@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "PurchaseHelper"
-  s.version      = "0.99.2"
+  s.version      = "0.99.3"
   s.summary      = "In-app purchase helper and UI elements"
 
   # This description is used to generate tags and improve search results.

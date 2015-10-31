@@ -27,7 +27,7 @@ NSString* const ProductPurchasedNotificationProductIdentifierKey = @"product";
 }
 
 - (instancetype)init {
-    [NSException raise:RPGUnimplementedException
+    [NSException raise:@"MethodUnimplementedException"
                 format:@"Method not implemented: %@", NSStringFromSelector(_cmd)];
     return [self initWithProductIdentifiers:[NSSet set]
                             keychainAccount:@""];
@@ -204,7 +204,7 @@ didFailWithError:(NSError*)error {
     [_requestMap removeObjectForKey:requestKey];
     [_handlerMap removeObjectForKey:requestKey];
 
-    completionHandler(NO, nil);
+    completionHandler(NO, @[]);
 }
 
 - (void)paymentQueue:(SKPaymentQueue*)queue
