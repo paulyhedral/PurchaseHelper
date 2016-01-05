@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5B27F4EE1C3C7809006DCC6D /* SSKeychain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B27F4ED1C3C7809006DCC6D /* SSKeychain.framework */; };
 		5BBC8CF81BE57D3600371899 /* PurchaseHelper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BBC8CED1BE57D3600371899 /* PurchaseHelper.framework */; };
 		5BBC8CFD1BE57D3600371899 /* PurchaseHelperTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BBC8CFC1BE57D3600371899 /* PurchaseHelperTests.m */; };
 		5BBC8D0E1BE57F0100371899 /* PurchaseHelper-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5BBC8D071BE57F0100371899 /* PurchaseHelper-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -31,6 +32,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5B27F4ED1C3C7809006DCC6D /* SSKeychain.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SSKeychain.framework; path = Carthage/Build/iOS/SSKeychain.framework; sourceTree = "<group>"; };
+		5B27F4EF1C3C7894006DCC6D /* Cartfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
+		5B27F4F01C3C7894006DCC6D /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		5B27F4F11C3C7894006DCC6D /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		5B27F4F41C3C7A8F006DCC6D /* PurchaseHelper.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = PurchaseHelper.podspec; sourceTree = "<group>"; };
 		5BBC8CED1BE57D3600371899 /* PurchaseHelper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PurchaseHelper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BBC8CF21BE57D3600371899 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5BBC8CF71BE57D3600371899 /* PurchaseHelperTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PurchaseHelperTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -52,6 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B27F4EE1C3C7809006DCC6D /* SSKeychain.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,11 +73,40 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5B27F4EC1C3C77F2006DCC6D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5B27F4ED1C3C7809006DCC6D /* SSKeychain.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5B27F4F21C3C7899006DCC6D /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				5B27F4F41C3C7A8F006DCC6D /* PurchaseHelper.podspec */,
+				5B27F4EF1C3C7894006DCC6D /* Cartfile */,
+			);
+			name = Configuration;
+			sourceTree = "<group>";
+		};
+		5B27F4F31C3C78A2006DCC6D /* Documentation */ = {
+			isa = PBXGroup;
+			children = (
+				5B27F4F01C3C7894006DCC6D /* LICENSE */,
+				5B27F4F11C3C7894006DCC6D /* README.md */,
+			);
+			name = Documentation;
+			sourceTree = "<group>";
+		};
 		5BBC8CE31BE57D3600371899 = {
 			isa = PBXGroup;
 			children = (
+				5B27F4F21C3C7899006DCC6D /* Configuration */,
+				5B27F4F31C3C78A2006DCC6D /* Documentation */,
 				5BBC8CEF1BE57D3600371899 /* PurchaseHelper */,
 				5BBC8CFB1BE57D3600371899 /* PurchaseHelperTests */,
+				5B27F4EC1C3C77F2006DCC6D /* Frameworks */,
 				5BBC8CEE1BE57D3600371899 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -342,6 +378,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = PurchaseHelper/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -359,6 +399,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = PurchaseHelper/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;

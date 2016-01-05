@@ -1,0 +1,3 @@
+[submodule "Carthage/Checkouts/SSKeychain"]
+	path = Carthage/Checkouts/SSKeychain
+	url = https://github.com/soffes/SSKeychain.git
