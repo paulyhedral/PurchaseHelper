@@ -1,0 +1,4 @@
+language: objective-c
+xcode_project: PurchaseHelper.xcodeproj
+xcode_scheme: PurchaseHelper
+xcode_sdk: iphonesimulator
