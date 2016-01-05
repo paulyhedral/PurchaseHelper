@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "PurchaseHelper"
-  s.version      = "1.0.2"
+  s.version      = "1.0.3"
   s.summary      = "In-app purchase helper and UI elements"
 
   # This description is used to generate tags and improve search results.
@@ -106,7 +106,7 @@ Pod::Spec.new do |s|
   #
 
   # s.resource  = "icon.png"
-  s.resources = "RoundButton/*.xib"
+  # s.resources = "RoundButton/*.xib"
 
   # s.preserve_paths = "FilesToSave", "MoreFilesToSave"
 
