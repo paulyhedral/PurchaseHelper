@@ -127,6 +127,8 @@ NSString* const ProductPurchasedNotificationProductIdentifierKey = @"product";
         return;
     }
 
+    NSLog(@"Starting products request...");
+
     _productsRequest = [[SKProductsRequest alloc] initWithProductIdentifiers:_productIdentifiers];
     _completionHandler = completionHandler;
 
