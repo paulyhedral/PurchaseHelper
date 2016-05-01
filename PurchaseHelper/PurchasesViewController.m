@@ -172,18 +172,23 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView
-heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-
-    SKProduct* product = _products[indexPath.row];
-
-    NSAttributedString* desc = [[NSAttributedString alloc] initWithString:product.localizedDescription];
-    CGFloat width = tableView.bounds.size.width - 150;
-    CGRect bounds = [desc boundingRectWithSize:CGSizeMake(width, FLT_MAX)
-                                       options:NSStringDrawingUsesLineFragmentOrigin
-                                       context:nil];
-
-    return 50.0f + bounds.size.height;
+estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return UITableViewAutomaticDimension;
 }
+
+//- (CGFloat)tableView:(UITableView *)tableView
+//heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+//
+//    SKProduct* product = _products[indexPath.row];
+//
+//    NSAttributedString* desc = [[NSAttributedString alloc] initWithString:product.localizedDescription];
+//    CGFloat width = tableView.bounds.size.width - 150;
+//    CGRect bounds = [desc boundingRectWithSize:CGSizeMake(width, FLT_MAX)
+//                                       options:NSStringDrawingUsesLineFragmentOrigin
+//                                       context:nil];
+//
+//    return 50.0f + bounds.size.height;
+//}
 
 - (void)tableView:(UITableView*)tableView
   willDisplayCell:(UITableViewCell*)cell
