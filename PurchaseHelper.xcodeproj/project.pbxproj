@@ -8,7 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		5B27F4EE1C3C7809006DCC6D /* SSKeychain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B27F4ED1C3C7809006DCC6D /* SSKeychain.framework */; };
-		5B2E5CD11CC1F0BA00D98516 /* PurchaseItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B2E5CD01CC1F0BA00D98516 /* PurchaseItemCell.xib */; };
+		5B70C7681CD65DC3004DA396 /* PurchasesView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B70C76A1CD65DC3004DA396 /* PurchasesView.xib */; };
+		5B70C76B1CD65DC9004DA396 /* PurchaseItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B70C76D1CD65DC9004DA396 /* PurchaseItemCell.xib */; };
+		5B70C7701CD65E00004DA396 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5B70C7721CD65E00004DA396 /* Localizable.strings */; };
 		5BBC8CF81BE57D3600371899 /* PurchaseHelper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BBC8CED1BE57D3600371899 /* PurchaseHelper.framework */; };
 		5BBC8CFD1BE57D3600371899 /* PurchaseHelperTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BBC8CFC1BE57D3600371899 /* PurchaseHelperTests.m */; };
 		5BBC8D0E1BE57F0100371899 /* PurchaseHelper-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5BBC8D071BE57F0100371899 /* PurchaseHelper-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -38,7 +40,9 @@
 		5B27F4F01C3C7894006DCC6D /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		5B27F4F11C3C7894006DCC6D /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		5B27F4F41C3C7A8F006DCC6D /* PurchaseHelper.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = PurchaseHelper.podspec; sourceTree = "<group>"; };
-		5B2E5CD01CC1F0BA00D98516 /* PurchaseItemCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PurchaseItemCell.xib; sourceTree = "<group>"; };
+		5B70C7691CD65DC3004DA396 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/PurchasesView.xib; sourceTree = "<group>"; };
+		5B70C76C1CD65DC9004DA396 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/PurchaseItemCell.xib; sourceTree = "<group>"; };
+		5B70C7711CD65E00004DA396 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		5BBC8CED1BE57D3600371899 /* PurchaseHelper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PurchaseHelper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BBC8CF21BE57D3600371899 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5BBC8CF71BE57D3600371899 /* PurchaseHelperTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PurchaseHelperTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -134,8 +138,10 @@
 				5BBC8D0B1BE57F0100371899 /* PurchaseItemCell.m */,
 				5BBC8D0C1BE57F0100371899 /* PurchasesViewController.h */,
 				5BBC8D0D1BE57F0100371899 /* PurchasesViewController.m */,
+				5B70C7721CD65E00004DA396 /* Localizable.strings */,
 				5BBC8CF21BE57D3600371899 /* Info.plist */,
-				5B2E5CD01CC1F0BA00D98516 /* PurchaseItemCell.xib */,
+				5B70C76D1CD65DC9004DA396 /* PurchaseItemCell.xib */,
+				5B70C76A1CD65DC3004DA396 /* PurchasesView.xib */,
 			);
 			path = PurchaseHelper;
 			sourceTree = "<group>";
@@ -243,7 +249,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5B2E5CD11CC1F0BA00D98516 /* PurchaseItemCell.xib in Resources */,
+				5B70C76B1CD65DC9004DA396 /* PurchaseItemCell.xib in Resources */,
+				5B70C7701CD65E00004DA396 /* Localizable.strings in Resources */,
+				5B70C7681CD65DC3004DA396 /* PurchasesView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -285,6 +293,33 @@
 			targetProxy = 5BBC8CF91BE57D3600371899 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		5B70C76A1CD65DC3004DA396 /* PurchasesView.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5B70C7691CD65DC3004DA396 /* en */,
+			);
+			name = PurchasesView.xib;
+			sourceTree = "<group>";
+		};
+		5B70C76D1CD65DC9004DA396 /* PurchaseItemCell.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5B70C76C1CD65DC9004DA396 /* en */,
+			);
+			name = PurchaseItemCell.xib;
+			sourceTree = "<group>";
+		};
+		5B70C7721CD65E00004DA396 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5B70C7711CD65E00004DA396 /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		5BBC8CFF1BE57D3600371899 /* Debug */ = {
