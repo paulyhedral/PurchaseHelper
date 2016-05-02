@@ -54,6 +54,8 @@
     _restoreButton.hidden = !_showRestoreButton;
 
     _tableView.separatorColor = self.view.backgroundColor;
+    _tableView.rowHeight = UITableViewAutomaticDimension;
+    _tableView.estimatedRowHeight = 100;
 
     _formatter = [NSNumberFormatter new];
     _formatter.numberStyle = NSNumberFormatterCurrencyStyle;

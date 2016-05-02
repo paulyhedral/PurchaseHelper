@@ -15,6 +15,12 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="85"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="252" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7IA-4g-W9N">
+                        <rect key="frame" x="8" y="8" width="216" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Label" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ICJ-b3-41k">
                         <rect key="frame" x="8" y="37" width="216" height="40"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -31,12 +37,6 @@
                         <rect key="frame" x="282" y="28" width="30" height="30"/>
                         <state key="normal" title="Buy"/>
                     </button>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="252" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7IA-4g-W9N">
-                        <rect key="frame" x="8" y="8" width="216" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                        <nil key="highlightedColor"/>
-                    </label>
                 </subviews>
                 <constraints>
                     <constraint firstItem="ICJ-b3-41k" firstAttribute="width" secondItem="7IA-4g-W9N" secondAttribute="width" id="4hU-wx-jeT"/>
