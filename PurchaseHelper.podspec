@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "PurchaseHelper"
-  s.version      = "1.0.4.1"
+  s.version      = "1.0.4.2"
   s.summary      = "In-app purchase helper and UI elements"
 
   s.description  = <<-DESC
@@ -23,7 +23,8 @@ Pod::Spec.new do |s|
 
   s.source_files  = "PurchaseHelper/**/*.{h,m}"
   s.exclude_files = "Classes/Exclude"
-  s.public_header_files = "PurchaseHelper/**/*.h"
+  s.public_header_files = "PurchaseHelper/*.h"
+  s.private_header_files = "PurchaseHelper/Private/*.h"
   s.requires_arc = true
 
   s.dependency "SAMKeychain"

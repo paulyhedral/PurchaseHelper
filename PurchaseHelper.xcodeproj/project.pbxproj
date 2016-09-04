@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		5B6A33B81D7CB7A000BABE7E /* SAMKeychain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B6A33AB1D7CB79300BABE7E /* SAMKeychain.framework */; };
 		5B6A33BC1D7CB91000BABE7E /* SAMKeychain.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 5B6A33AB1D7CB79300BABE7E /* SAMKeychain.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		5B6A33CC1D7CDBE800BABE7E /* UIControl+RepresentedObject.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B6A33CA1D7CDBE800BABE7E /* UIControl+RepresentedObject.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		5B6A33CD1D7CDBE800BABE7E /* UIControl+RepresentedObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B6A33CB1D7CDBE800BABE7E /* UIControl+RepresentedObject.m */; };
 		5B70C7681CD65DC3004DA396 /* PurchasesView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B70C76A1CD65DC3004DA396 /* PurchasesView.xib */; };
 		5B70C76B1CD65DC9004DA396 /* PurchaseItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B70C76D1CD65DC9004DA396 /* PurchaseItemCell.xib */; };
 		5B70C7701CD65E00004DA396 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5B70C7721CD65E00004DA396 /* Localizable.strings */; };
@@ -21,8 +23,6 @@
 		5BBC8D121BE57F0100371899 /* PurchaseItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BBC8D0B1BE57F0100371899 /* PurchaseItemCell.m */; };
 		5BBC8D131BE57F0100371899 /* PurchasesViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 5BBC8D0C1BE57F0100371899 /* PurchasesViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5BBC8D141BE57F0100371899 /* PurchasesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BBC8D0D1BE57F0100371899 /* PurchasesViewController.m */; };
-		5BBC8D171BE5817C00371899 /* UIControl+RepresentedObject.h in Headers */ = {isa = PBXBuildFile; fileRef = 5BBC8D151BE5817C00371899 /* UIControl+RepresentedObject.h */; settings = {ATTRIBUTES = (Private, ); }; };
-		5BBC8D181BE5817C00371899 /* UIControl+RepresentedObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BBC8D161BE5817C00371899 /* UIControl+RepresentedObject.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -110,6 +110,8 @@
 		5B27F4F11C3C7894006DCC6D /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		5B27F4F41C3C7A8F006DCC6D /* PurchaseHelper.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = PurchaseHelper.podspec; sourceTree = "<group>"; };
 		5B6A33A01D7CB79200BABE7E /* SAMKeychain.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SAMKeychain.xcodeproj; path = Submodules/SAMKeychain/SAMKeychain.xcodeproj; sourceTree = "<group>"; };
+		5B6A33CA1D7CDBE800BABE7E /* UIControl+RepresentedObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIControl+RepresentedObject.h"; sourceTree = "<group>"; };
+		5B6A33CB1D7CDBE800BABE7E /* UIControl+RepresentedObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIControl+RepresentedObject.m"; sourceTree = "<group>"; };
 		5B70C7691CD65DC3004DA396 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/PurchasesView.xib; sourceTree = "<group>"; };
 		5B70C76C1CD65DC9004DA396 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/PurchaseItemCell.xib; sourceTree = "<group>"; };
 		5B70C7711CD65E00004DA396 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -125,8 +127,6 @@
 		5BBC8D0B1BE57F0100371899 /* PurchaseItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PurchaseItemCell.m; sourceTree = "<group>"; };
 		5BBC8D0C1BE57F0100371899 /* PurchasesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PurchasesViewController.h; sourceTree = "<group>"; };
 		5BBC8D0D1BE57F0100371899 /* PurchasesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PurchasesViewController.m; sourceTree = "<group>"; };
-		5BBC8D151BE5817C00371899 /* UIControl+RepresentedObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIControl+RepresentedObject.h"; sourceTree = "<group>"; };
-		5BBC8D161BE5817C00371899 /* UIControl+RepresentedObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIControl+RepresentedObject.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -195,6 +195,15 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		5B6A33C91D7CDBE800BABE7E /* Private */ = {
+			isa = PBXGroup;
+			children = (
+				5B6A33CA1D7CDBE800BABE7E /* UIControl+RepresentedObject.h */,
+				5B6A33CB1D7CDBE800BABE7E /* UIControl+RepresentedObject.m */,
+			);
+			path = Private;
+			sourceTree = "<group>";
+		};
 		5BBC8CE31BE57D3600371899 = {
 			isa = PBXGroup;
 			children = (
@@ -220,8 +229,7 @@
 		5BBC8CEF1BE57D3600371899 /* PurchaseHelper */ = {
 			isa = PBXGroup;
 			children = (
-				5BBC8D151BE5817C00371899 /* UIControl+RepresentedObject.h */,
-				5BBC8D161BE5817C00371899 /* UIControl+RepresentedObject.m */,
+				5B6A33C91D7CDBE800BABE7E /* Private */,
 				5BBC8D071BE57F0100371899 /* PurchaseHelper-umbrella.h */,
 				5BBC8D081BE57F0100371899 /* PurchaseHelper.h */,
 				5BBC8D091BE57F0100371899 /* PurchaseHelper.m */,
@@ -256,7 +264,7 @@
 				5BBC8D131BE57F0100371899 /* PurchasesViewController.h in Headers */,
 				5BBC8D0E1BE57F0100371899 /* PurchaseHelper-umbrella.h in Headers */,
 				5BBC8D0F1BE57F0100371899 /* PurchaseHelper.h in Headers */,
-				5BBC8D171BE5817C00371899 /* UIControl+RepresentedObject.h in Headers */,
+				5B6A33CC1D7CDBE800BABE7E /* UIControl+RepresentedObject.h in Headers */,
 				5BBC8D111BE57F0100371899 /* PurchaseItemCell.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -422,7 +430,7 @@
 			files = (
 				5BBC8D141BE57F0100371899 /* PurchasesViewController.m in Sources */,
 				5BBC8D101BE57F0100371899 /* PurchaseHelper.m in Sources */,
-				5BBC8D181BE5817C00371899 /* UIControl+RepresentedObject.m in Sources */,
+				5B6A33CD1D7CDBE800BABE7E /* UIControl+RepresentedObject.m in Sources */,
 				5BBC8D121BE57F0100371899 /* PurchaseItemCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
