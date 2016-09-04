@@ -8,7 +8,7 @@
 
 #import "PurchaseHelper.h"
 
-#import <SSKeychain/SSKeychain.h>
+#import <SAMKeychain/SAMKeychain.h>
 
 
 NSString* const ProductPurchasedNotification = @"ProductPurchased";
@@ -45,11 +45,11 @@ NSString* const ProductPurchasedNotificationProductIdentifierKey = @"product";
 //        _requestMap = [NSMutableDictionary new];
 //        _handlerMap = [NSMutableDictionary new];
 
-        [SSKeychain setAccessibilityType:kSecAttrAccessibleAlways];
+        [SAMKeychain setAccessibilityType:kSecAttrAccessibleAlways];
 
         // check for previously purchased items
         _purchasedProductIdentifiers = [NSMutableSet new];
-        NSArray* purchases = [SSKeychain accountsForService:_keychainAccount];
+        NSArray* purchases = [SAMKeychain accountsForService:_keychainAccount];
         for(NSDictionary* purchaseDict in purchases) {
             NSString* productId = purchaseDict[(__bridge id)kSecAttrAccount];
 
@@ -102,7 +102,7 @@ NSString* const ProductPurchasedNotificationProductIdentifierKey = @"product";
 
     [_purchasedProductIdentifiers addObject:productId];
 
-    [SSKeychain setPassword:transaction.transactionIdentifier
+    [SAMKeychain setPassword:transaction.transactionIdentifier
                  forService:_keychainAccount
                     account:productId];
 
@@ -151,12 +151,12 @@ NSString* const ProductPurchasedNotificationProductIdentifierKey = @"product";
 - (BOOL)productPurchased:(NSString*)productIdentifier {
 
     // check for item on keychain
-    NSString* transactionId = [SSKeychain passwordForService:_keychainAccount
+    NSString* transactionId = [SAMKeychain passwordForService:_keychainAccount
                                                      account:productIdentifier];
     if(transactionId == nil) {
         NSArray* equivalents = _productEquivalenceMap[productIdentifier];
         for(NSString* equivalentId in equivalents) {
-            transactionId = [SSKeychain passwordForService:_keychainAccount
+            transactionId = [SAMKeychain passwordForService:_keychainAccount
                                                    account:equivalentId];
             if(transactionId) {
                 productIdentifier = equivalentId;
@@ -176,7 +176,7 @@ NSString* const ProductPurchasedNotificationProductIdentifierKey = @"product";
 - (void)clearPurchaseHistory {
 #ifdef DEBUG
     for(NSString* productId in [self productIdentifiers]) {
-        [SSKeychain deletePasswordForService:_keychainAccount
+        [SAMKeychain deletePasswordForService:_keychainAccount
                                      account:productId];
         [_purchasedProductIdentifiers removeObject:productId];
     }

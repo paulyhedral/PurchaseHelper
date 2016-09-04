@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5B27F4EE1C3C7809006DCC6D /* SSKeychain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B27F4ED1C3C7809006DCC6D /* SSKeychain.framework */; };
+		5B6A33B81D7CB7A000BABE7E /* SAMKeychain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B6A33AB1D7CB79300BABE7E /* SAMKeychain.framework */; };
+		5B6A33BC1D7CB91000BABE7E /* SAMKeychain.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 5B6A33AB1D7CB79300BABE7E /* SAMKeychain.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5B70C7681CD65DC3004DA396 /* PurchasesView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B70C76A1CD65DC3004DA396 /* PurchasesView.xib */; };
 		5B70C76B1CD65DC9004DA396 /* PurchaseItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B70C76D1CD65DC9004DA396 /* PurchaseItemCell.xib */; };
 		5B70C7701CD65E00004DA396 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5B70C7721CD65E00004DA396 /* Localizable.strings */; };
@@ -25,6 +26,62 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		5B6A33AA1D7CB79300BABE7E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5B6A33A01D7CB79200BABE7E /* SAMKeychain.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = E8A666341A844CC400287CA3;
+			remoteInfo = "SAMKeychain-iOS";
+		};
+		5B6A33AC1D7CB79300BABE7E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5B6A33A01D7CB79200BABE7E /* SAMKeychain.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = E8A666551A844D3A00287CA3;
+			remoteInfo = "SAMKeychainTests-iOS";
+		};
+		5B6A33AE1D7CB79300BABE7E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5B6A33A01D7CB79200BABE7E /* SAMKeychain.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = E8A6666F1A844E4100287CA3;
+			remoteInfo = "SAMKeychain-OSX";
+		};
+		5B6A33B01D7CB79300BABE7E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5B6A33A01D7CB79200BABE7E /* SAMKeychain.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = E8A666791A844E4100287CA3;
+			remoteInfo = "SAMKeychainTests-OSX";
+		};
+		5B6A33B21D7CB79300BABE7E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5B6A33A01D7CB79200BABE7E /* SAMKeychain.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 21632D981C925A3C00C40D7D;
+			remoteInfo = "SAMKeychain-tvOS";
+		};
+		5B6A33B41D7CB79300BABE7E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5B6A33A01D7CB79200BABE7E /* SAMKeychain.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 21632DA11C925A3C00C40D7D;
+			remoteInfo = "SAMKeychainTests-tvOS";
+		};
+		5B6A33B61D7CB79300BABE7E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5B6A33A01D7CB79200BABE7E /* SAMKeychain.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 21632DBC1C925B1F00C40D7D;
+			remoteInfo = "SAMKeychain-watchOS";
+		};
+		5B6A33B91D7CB8E500BABE7E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5B6A33A01D7CB79200BABE7E /* SAMKeychain.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = E8A666331A844CC400287CA3;
+			remoteInfo = "SAMKeychain-iOS";
+		};
 		5BBC8CF91BE57D3600371899 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 5BBC8CE41BE57D3600371899 /* Project object */;
@@ -34,12 +91,25 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		5B6A33BB1D7CB8F500BABE7E /* Copy Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				5B6A33BC1D7CB91000BABE7E /* SAMKeychain.framework in Copy Frameworks */,
+			);
+			name = "Copy Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
-		5B27F4ED1C3C7809006DCC6D /* SSKeychain.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SSKeychain.framework; path = Carthage/Build/iOS/SSKeychain.framework; sourceTree = "<group>"; };
-		5B27F4EF1C3C7894006DCC6D /* Cartfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
 		5B27F4F01C3C7894006DCC6D /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		5B27F4F11C3C7894006DCC6D /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		5B27F4F41C3C7A8F006DCC6D /* PurchaseHelper.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = PurchaseHelper.podspec; sourceTree = "<group>"; };
+		5B6A33A01D7CB79200BABE7E /* SAMKeychain.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SAMKeychain.xcodeproj; path = Submodules/SAMKeychain/SAMKeychain.xcodeproj; sourceTree = "<group>"; };
 		5B70C7691CD65DC3004DA396 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/PurchasesView.xib; sourceTree = "<group>"; };
 		5B70C76C1CD65DC9004DA396 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/PurchaseItemCell.xib; sourceTree = "<group>"; };
 		5B70C7711CD65E00004DA396 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -64,7 +134,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5B27F4EE1C3C7809006DCC6D /* SSKeychain.framework in Frameworks */,
+				5B6A33B81D7CB7A000BABE7E /* SAMKeychain.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,7 +152,6 @@
 		5B27F4EC1C3C77F2006DCC6D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				5B27F4ED1C3C7809006DCC6D /* SSKeychain.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -91,7 +160,6 @@
 			isa = PBXGroup;
 			children = (
 				5B27F4F41C3C7A8F006DCC6D /* PurchaseHelper.podspec */,
-				5B27F4EF1C3C7894006DCC6D /* Cartfile */,
 			);
 			name = Configuration;
 			sourceTree = "<group>";
@@ -105,6 +173,28 @@
 			name = Documentation;
 			sourceTree = "<group>";
 		};
+		5B6A339F1D7CB78400BABE7E /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				5B6A33A01D7CB79200BABE7E /* SAMKeychain.xcodeproj */,
+			);
+			name = Libraries;
+			sourceTree = "<group>";
+		};
+		5B6A33A11D7CB79200BABE7E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5B6A33AB1D7CB79300BABE7E /* SAMKeychain.framework */,
+				5B6A33AD1D7CB79300BABE7E /* SAMKeychainTests-iOS.xctest */,
+				5B6A33AF1D7CB79300BABE7E /* SAMKeychain.framework */,
+				5B6A33B11D7CB79300BABE7E /* SAMKeychainTests-OSX.xctest */,
+				5B6A33B31D7CB79300BABE7E /* SAMKeychain.framework */,
+				5B6A33B51D7CB79300BABE7E /* SAMKeychainTests.xctest */,
+				5B6A33B71D7CB79300BABE7E /* SAMKeychain.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		5BBC8CE31BE57D3600371899 = {
 			isa = PBXGroup;
 			children = (
@@ -112,6 +202,7 @@
 				5B27F4F31C3C78A2006DCC6D /* Documentation */,
 				5BBC8CEF1BE57D3600371899 /* PurchaseHelper */,
 				5BBC8CFB1BE57D3600371899 /* PurchaseHelperTests */,
+				5B6A339F1D7CB78400BABE7E /* Libraries */,
 				5B27F4EC1C3C77F2006DCC6D /* Frameworks */,
 				5BBC8CEE1BE57D3600371899 /* Products */,
 			);
@@ -181,10 +272,12 @@
 				5BBC8CE91BE57D3600371899 /* Frameworks */,
 				5BBC8CEA1BE57D3600371899 /* Headers */,
 				5BBC8CEB1BE57D3600371899 /* Resources */,
+				5B6A33BB1D7CB8F500BABE7E /* Copy Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				5B6A33BA1D7CB8E500BABE7E /* PBXTargetDependency */,
 			);
 			name = PurchaseHelper;
 			productName = PurchaseHelper;
@@ -236,6 +329,12 @@
 			mainGroup = 5BBC8CE31BE57D3600371899;
 			productRefGroup = 5BBC8CEE1BE57D3600371899 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 5B6A33A11D7CB79200BABE7E /* Products */;
+					ProjectRef = 5B6A33A01D7CB79200BABE7E /* SAMKeychain.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				5BBC8CEC1BE57D3600371899 /* PurchaseHelper */,
@@ -243,6 +342,58 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		5B6A33AB1D7CB79300BABE7E /* SAMKeychain.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SAMKeychain.framework;
+			remoteRef = 5B6A33AA1D7CB79300BABE7E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		5B6A33AD1D7CB79300BABE7E /* SAMKeychainTests-iOS.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "SAMKeychainTests-iOS.xctest";
+			remoteRef = 5B6A33AC1D7CB79300BABE7E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		5B6A33AF1D7CB79300BABE7E /* SAMKeychain.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SAMKeychain.framework;
+			remoteRef = 5B6A33AE1D7CB79300BABE7E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		5B6A33B11D7CB79300BABE7E /* SAMKeychainTests-OSX.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "SAMKeychainTests-OSX.xctest";
+			remoteRef = 5B6A33B01D7CB79300BABE7E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		5B6A33B31D7CB79300BABE7E /* SAMKeychain.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SAMKeychain.framework;
+			remoteRef = 5B6A33B21D7CB79300BABE7E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		5B6A33B51D7CB79300BABE7E /* SAMKeychainTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = SAMKeychainTests.xctest;
+			remoteRef = 5B6A33B41D7CB79300BABE7E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		5B6A33B71D7CB79300BABE7E /* SAMKeychain.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SAMKeychain.framework;
+			remoteRef = 5B6A33B61D7CB79300BABE7E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		5BBC8CEB1BE57D3600371899 /* Resources */ = {
@@ -287,6 +438,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		5B6A33BA1D7CB8E500BABE7E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "SAMKeychain-iOS";
+			targetProxy = 5B6A33B91D7CB8E500BABE7E /* PBXContainerItemProxy */;
+		};
 		5BBC8CFA1BE57D3600371899 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 5BBC8CEC1BE57D3600371899 /* PurchaseHelper */;
