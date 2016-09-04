@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "PurchaseHelper"
-  s.version      = "1.0.4"
+  s.version      = "1.0.4.1"
   s.summary      = "In-app purchase helper and UI elements"
 
   s.description  = <<-DESC
@@ -17,7 +17,7 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = "9.3"
   # s.osx.deployment_target = "10.7"
   # s.watchos.deployment_target = "2.0"
-  s.tvos.deployment_target = "9.2"
+  # s.tvos.deployment_target = "9.2"
 
   s.source       = { :git => "https://github.com/exsortis/PurchaseHelper.git", :tag => s.version.to_s }
 
