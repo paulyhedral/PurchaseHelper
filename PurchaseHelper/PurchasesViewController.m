@@ -152,7 +152,7 @@
     SKProduct* product = sender.representedObject;
 
     if(product) {
-        [_helper buyProduct:product];
+        [_helper buyProduct:product.productIdentifier];
     }
 }
 
