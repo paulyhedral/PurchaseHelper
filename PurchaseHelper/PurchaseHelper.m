@@ -20,8 +20,9 @@ NSString* const ProductPurchasedNotificationProductIdentifierKey = @"product";
     SKProductsRequest* _productsRequest;
     RequestProductsCompletionHandler _completionHandler;
 
-    NSSet* _productIdentifiers;
-    NSMutableSet* _purchasedProductIdentifiers;
+    NSSet<NSString*>* _productIdentifiers;
+    NSMutableSet<NSString*>* _purchasedProductIdentifiers;
+    NSMutableDictionary<NSString*, SKProduct*>* _products;
 
 //    NSMutableDictionary* _requestMap;
 //    NSMutableDictionary* _handlerMap;
@@ -42,6 +43,7 @@ NSString* const ProductPurchasedNotificationProductIdentifierKey = @"product";
     if(self) {
         _productIdentifiers = productIdentifiers;
         _keychainAccount = keychainAccount;
+        _products = [NSMutableDictionary new];
 //        _requestMap = [NSMutableDictionary new];
 //        _handlerMap = [NSMutableDictionary new];
 
@@ -140,10 +142,11 @@ NSString* const ProductPurchasedNotificationProductIdentifierKey = @"product";
     [_productsRequest start];
 }
 
-- (void)buyProduct:(SKProduct*)product {
+- (void)buyProduct:(nonnull NSString*)productIdentifier {
 
-    NSLog(@"Buying %@...", product.productIdentifier);
+    NSLog(@"Buying %@...", productIdentifier);
 
+    SKProduct* product = _products[productIdentifier];
     SKPayment* payment = [SKPayment paymentWithProduct:product];
     [[SKPaymentQueue defaultQueue] addPayment:payment];
 }
@@ -199,6 +202,7 @@ NSString* const ProductPurchasedNotificationProductIdentifierKey = @"product";
 
     NSArray* products = response.products;
     for(SKProduct* product in products) {
+        _products[product.productIdentifier] = product;
         NSLog(@"Found product: %@ %@ %0.2f", product.productIdentifier, product.localizedTitle, product.price.floatValue);
     }
 
