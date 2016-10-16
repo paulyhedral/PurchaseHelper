@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "PurchaseHelper"
-  s.version      = "1.1.1"
+  s.version      = "1.1.2"
   s.summary      = "In-app purchase helper and UI elements"
 
   s.description  = <<-DESC
@@ -22,6 +22,7 @@ Pod::Spec.new do |s|
   s.source       = { :git => "https://github.com/exsortis/PurchaseHelper.git", :tag => s.version.to_s }
 
   s.source_files  = "PurchaseHelper/**/*.{h,m}"
+  s.resources     = [ 'PurchaseHelper/**/*.xib', 'PurchaseHelper/**/*.strings' ]
   s.exclude_files = "Classes/Exclude"
   s.public_header_files = "PurchaseHelper/*.h"
   s.private_header_files = "PurchaseHelper/Private/*.h"
