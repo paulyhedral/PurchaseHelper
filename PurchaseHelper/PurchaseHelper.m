@@ -24,8 +24,8 @@ NSString* const ProductPurchasedNotificationProductIdentifierKey = @"product";
     NSMutableSet<NSString*>* _purchasedProductIdentifiers;
     NSMutableDictionary<NSString*, SKProduct*>* _products;
 
-//    NSMutableDictionary* _requestMap;
-//    NSMutableDictionary* _handlerMap;
+    //    NSMutableDictionary* _requestMap;
+    //    NSMutableDictionary* _handlerMap;
     NSDictionary* _productEquivalenceMap;
 
 }
@@ -44,8 +44,8 @@ NSString* const ProductPurchasedNotificationProductIdentifierKey = @"product";
         _productIdentifiers = productIdentifiers;
         _keychainAccount = keychainAccount;
         _products = [NSMutableDictionary new];
-//        _requestMap = [NSMutableDictionary new];
-//        _handlerMap = [NSMutableDictionary new];
+        //        _requestMap = [NSMutableDictionary new];
+        //        _handlerMap = [NSMutableDictionary new];
 
         [SAMKeychain setAccessibilityType:kSecAttrAccessibleAlways];
 
@@ -105,8 +105,8 @@ NSString* const ProductPurchasedNotificationProductIdentifierKey = @"product";
     [_purchasedProductIdentifiers addObject:productId];
 
     [SAMKeychain setPassword:transaction.transactionIdentifier
-                 forService:_keychainAccount
-                    account:productId];
+                  forService:_keychainAccount
+                     account:productId];
 
     [[NSNotificationCenter defaultCenter] postNotificationName:ProductPurchasedNotification
                                                         object:self
@@ -134,15 +134,15 @@ NSString* const ProductPurchasedNotificationProductIdentifierKey = @"product";
     _productsRequest = [[SKProductsRequest alloc] initWithProductIdentifiers:_productIdentifiers];
     _completionHandler = completionHandler;
 
-//    NSString* requestKey = [NSString stringWithFormat:@"%p", _productsRequest];
-//    _requestMap[requestKey] = _productsRequest;
-//    _handlerMap[requestKey] = [completionHandler copy];
+    //    NSString* requestKey = [NSString stringWithFormat:@"%p", _productsRequest];
+    //    _requestMap[requestKey] = _productsRequest;
+    //    _handlerMap[requestKey] = [completionHandler copy];
 
     _productsRequest.delegate = self;
     [_productsRequest start];
 }
 
-- (void)buyProduct:(nonnull NSString*)productIdentifier {
+- (void)buyProduct:(nonnull NSString*)productIdentifier NS_SWIFT_NAME(buy(productIdentifier:)) {
 
     NSLog(@"Buying %@...", productIdentifier);
 
@@ -151,16 +151,20 @@ NSString* const ProductPurchasedNotificationProductIdentifierKey = @"product";
     [[SKPaymentQueue defaultQueue] addPayment:payment];
 }
 
-- (BOOL)productPurchased:(NSString*)productIdentifier {
+- (BOOL)productPurchased:(NSString*)productIdentifier NS_SWIFT_NAME(isProductPurchased(productIdentifier:)) {
+
+    if(_testMode) {
+        return YES;
+    }
 
     // check for item on keychain
     NSString* transactionId = [SAMKeychain passwordForService:_keychainAccount
-                                                     account:productIdentifier];
+                                                      account:productIdentifier];
     if(transactionId == nil) {
         NSArray* equivalents = _productEquivalenceMap[productIdentifier];
         for(NSString* equivalentId in equivalents) {
             transactionId = [SAMKeychain passwordForService:_keychainAccount
-                                                   account:equivalentId];
+                                                    account:equivalentId];
             if(transactionId) {
                 productIdentifier = equivalentId;
                 break;
@@ -180,7 +184,7 @@ NSString* const ProductPurchasedNotificationProductIdentifierKey = @"product";
 #ifdef DEBUG
     for(NSString* productId in [self productIdentifiers]) {
         [SAMKeychain deletePasswordForService:_keychainAccount
-                                     account:productId];
+                                      account:productId];
         [_purchasedProductIdentifiers removeObject:productId];
     }
 #endif
@@ -192,11 +196,11 @@ NSString* const ProductPurchasedNotificationProductIdentifierKey = @"product";
 - (void)productsRequest:(SKProductsRequest*)request
      didReceiveResponse:(SKProductsResponse*)response {
 
-//    NSString* requestKey = [NSString stringWithFormat:@"%p", request];
-//    RequestProductsCompletionHandler completionHandler = _handlerMap[requestKey];
-//
-//    [_requestMap removeObjectForKey:requestKey];
-//    [_handlerMap removeObjectForKey:requestKey];
+    //    NSString* requestKey = [NSString stringWithFormat:@"%p", request];
+    //    RequestProductsCompletionHandler completionHandler = _handlerMap[requestKey];
+    //
+    //    [_requestMap removeObjectForKey:requestKey];
+    //    [_handlerMap removeObjectForKey:requestKey];
 
     NSLog(@"Loaded list of products...");
 
@@ -212,12 +216,12 @@ NSString* const ProductPurchasedNotificationProductIdentifierKey = @"product";
 - (void)request:(SKRequest*)request
 didFailWithError:(NSError*)error {
 
-//    NSString* requestKey = [NSString stringWithFormat:@"%p", request];
-//
-//    RequestProductsCompletionHandler completionHandler = _handlerMap[requestKey];
-//
-//    [_requestMap removeObjectForKey:requestKey];
-//    [_handlerMap removeObjectForKey:requestKey];
+    //    NSString* requestKey = [NSString stringWithFormat:@"%p", request];
+    //
+    //    RequestProductsCompletionHandler completionHandler = _handlerMap[requestKey];
+    //
+    //    [_requestMap removeObjectForKey:requestKey];
+    //    [_handlerMap removeObjectForKey:requestKey];
     _productsRequest = nil;
 
     _completionHandler(NO, @[]);
@@ -248,7 +252,7 @@ restoreCompletedTransactionsFailedWithError:(NSError*)error {
             case SKPaymentTransactionStateRestored:
                 [self restoreTransaction:tx];
                 break;
-
+                
             default:
                 // do nothing
                 break;

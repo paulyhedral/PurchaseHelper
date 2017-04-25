@@ -19,6 +19,7 @@ UIKIT_EXTERN NSString* _Nonnull const ProductPurchasedNotificationProductIdentif
 <SKProductsRequestDelegate, SKPaymentTransactionObserver>
 
 @property (nonatomic, nonnull, copy) NSString* keychainAccount;
+@property (nonatomic, assign) BOOL testMode;
 
 - (nonnull instancetype)initWithProductIdentifiers:(nonnull NSSet*)productIdentifiers
                                    keychainAccount:(nonnull NSString*)keychainAccount NS_DESIGNATED_INITIALIZER;
