@@ -25,8 +25,8 @@ UIKIT_EXTERN NSString* _Nonnull const ProductPurchasedNotificationProductIdentif
                                    keychainAccount:(nonnull NSString*)keychainAccount NS_DESIGNATED_INITIALIZER;
 
 - (void)requestProductsWithCompletionHandler:(nonnull RequestProductsCompletionHandler)completionHandler;
-- (void)buyProduct:(nonnull NSString*)productIdentifier;
-- (BOOL)productPurchased:(nonnull NSString*)productIdentifier;
+- (void)buyProduct:(nonnull NSString*)productIdentifier NS_SWIFT_NAME(buy(productIdentifier:));
+- (BOOL)productPurchased:(nonnull NSString*)productIdentifier NS_SWIFT_NAME(isProductPurchased(productIdentifier:));
 - (void)restoreCompletedTransactions;
 
 - (void)clearPurchaseHistory;

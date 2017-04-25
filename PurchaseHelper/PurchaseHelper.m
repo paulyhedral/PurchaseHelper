@@ -142,7 +142,7 @@ NSString* const ProductPurchasedNotificationProductIdentifierKey = @"product";
     [_productsRequest start];
 }
 
-- (void)buyProduct:(nonnull NSString*)productIdentifier NS_SWIFT_NAME(buy(productIdentifier:)) {
+- (void)buyProduct:(nonnull NSString*)productIdentifier {
 
     NSLog(@"Buying %@...", productIdentifier);
 
@@ -151,7 +151,7 @@ NSString* const ProductPurchasedNotificationProductIdentifierKey = @"product";
     [[SKPaymentQueue defaultQueue] addPayment:payment];
 }
 
-- (BOOL)productPurchased:(NSString*)productIdentifier NS_SWIFT_NAME(isProductPurchased(productIdentifier:)) {
+- (BOOL)productPurchased:(NSString*)productIdentifier {
 
     if(_testMode) {
         return YES;
