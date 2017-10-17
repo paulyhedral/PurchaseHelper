@@ -181,13 +181,11 @@ NSString* const ProductPurchasedNotificationProductIdentifierKey = @"product";
 }
 
 - (void)clearPurchaseHistory {
-#ifdef DEBUG
     for(NSString* productId in [self productIdentifiers]) {
         [SAMKeychain deletePasswordForService:_keychainAccount
                                       account:productId];
         [_purchasedProductIdentifiers removeObject:productId];
     }
-#endif
 }
 
 

@@ -108,7 +108,7 @@
 /* Begin PBXFileReference section */
 		5B27F4F01C3C7894006DCC6D /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		5B27F4F11C3C7894006DCC6D /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		5B27F4F41C3C7A8F006DCC6D /* PurchaseHelper.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = PurchaseHelper.podspec; sourceTree = "<group>"; };
+		5B27F4F41C3C7A8F006DCC6D /* PurchaseHelper.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; path = PurchaseHelper.podspec; sourceTree = "<group>"; };
 		5B6A33A01D7CB79200BABE7E /* SAMKeychain.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SAMKeychain.xcodeproj; path = Submodules/SAMKeychain/SAMKeychain.xcodeproj; sourceTree = "<group>"; };
 		5B6A33CA1D7CDBE800BABE7E /* UIControl+RepresentedObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIControl+RepresentedObject.h"; sourceTree = "<group>"; };
 		5B6A33CB1D7CDBE800BABE7E /* UIControl+RepresentedObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIControl+RepresentedObject.m"; sourceTree = "<group>"; };
