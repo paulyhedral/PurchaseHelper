@@ -3,3 +3,48 @@
 
 # PurchaseHelper
 In-app purchase helper and UI elements
+
+## Usage
+
+### Helper
+
+Instantiate the helper once, and keep a strong reference to it somewhere.
+
+```
+NSSet<NSString*>* productIds = [NSSet setWithObjects:@"product1", @"product2", @"product3"];
+PurchaseHelper* helper = [[PurchaseHelper alloc] initWithProductIdentifiers:productIds
+                                                            keychainAccount:@"MyIAPs"];
+```
+
+
+### UI
+
+Create the view controller, providing it a reference to the helper. Customize its appearance, then display it.
+
+```
+PurchasesViewController* vc = [PurchasesViewController new];
+vc.purchaseHelper = helper;
+
+vc.titleFont = appTitleFont;
+vc.buttonFont = appButtonFont;
+...
+
+[self presentViewController:purchasesVC animated:YES completion:nil];
+```
+
+If your app needs to know when the purchase completed, setup a notification observer:
+
+```
+[[NSNotificationCenter defaultCenter] addObserverForName:ProductPurchasedNotification object:nil queue:nil usingBlock:^(NSNotification* note){
+    NSString* productId = note.userInfo[ProductPurchasedNotificationProductIdentifierKey];
+    // do something with the notification
+}];
+```
+
+## Copyright
+
+Copyright © 2016-7 Pilgrimage Software
+
+## License
+
+See LICENSE for details.
