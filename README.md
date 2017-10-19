@@ -12,8 +12,7 @@ Instantiate the helper once, and keep a strong reference to it somewhere.
 
 ```
 NSSet<NSString*>* productIds = [NSSet setWithObjects:@"product1", @"product2", @"product3"];
-PurchaseHelper* helper = [[PurchaseHelper alloc] initWithProductIdentifiers:productIds
-                                                            keychainAccount:@"MyIAPs"];
+PurchaseHelper* helper = [[PurchaseHelper alloc] initWithProductIdentifiers:productIds keychainAccount:@"MyIAPs"];
 ```
 
 
