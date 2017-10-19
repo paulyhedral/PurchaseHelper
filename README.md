@@ -15,6 +15,29 @@ NSSet<NSString*>* productIds = [NSSet setWithObjects:@"product1", @"product2", @
 PurchaseHelper* helper = [[PurchaseHelper alloc] initWithProductIdentifiers:productIds keychainAccount:@"MyIAPs"];
 ```
 
+Buy a product:
+
+```
+[helper buyProduct:@"product2"];
+```
+
+And check if a product was bought:
+
+```
+if([helper productPurchased:@"product3"]) {
+    // show some feature
+}
+else {
+    // encourage the user to buy this feature
+}
+```
+
+Restore completed transactions:
+
+```
+[helper restoreCompletedTransactions];
+```
+
 
 ### UI
 
