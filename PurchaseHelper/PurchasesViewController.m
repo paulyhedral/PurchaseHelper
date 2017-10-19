@@ -22,7 +22,6 @@
 @private
     NSArray* _products;
     NSNumberFormatter* _formatter;
-    PurchaseHelper* _helper;
 
 }
 
@@ -74,9 +73,6 @@
          forCellReuseIdentifier:@"Product"];
     }
 
-    _helper = [[PurchaseHelper alloc] initWithProductIdentifiers:_productIdentifiers
-                                                 keychainAccount:_keychainAccount];
-
     [[NSNotificationCenter defaultCenter] addObserverForName:ProductPurchasedNotification
                                                       object:nil
                                                        queue:[NSOperationQueue mainQueue]
@@ -103,7 +99,7 @@
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
 
-    [_helper requestProductsWithCompletionHandler:^(BOOL success, NSArray *products) {
+    [_purchaseHelper requestProductsWithCompletionHandler:^(BOOL success, NSArray *products) {
         if(success &&
            [products count] > 0) {
 
@@ -143,7 +139,7 @@
 }
 
 - (IBAction)restoreTouched:(id)sender {
-    [_helper restoreCompletedTransactions];
+    [_purchaseHelper restoreCompletedTransactions];
 }
 
 - (IBAction)buyTouched:(UIButton*)sender {
@@ -152,7 +148,7 @@
     SKProduct* product = sender.representedObject;
 
     if(product) {
-        [_helper buyProduct:product.productIdentifier];
+        [_purchaseHelper buyProduct:product.productIdentifier];
     }
 }
 
