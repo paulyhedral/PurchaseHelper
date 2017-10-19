@@ -208,14 +208,14 @@ forRowAtIndexPath:(NSIndexPath*)indexPath {
     productCell.priceLabel.text = [_formatter stringFromNumber:product.price];
     productCell.priceLabel.font = _priceLabelFont ?: [UIFont systemFontOfSize:24];
 
-    if([_helper productPurchased:product.productIdentifier]) {
+    if([_purchaseHelper productPurchased:product.productIdentifier]) {
         productCell.buyButton.titleLabel.text = @"👍";
     }
     else {
         productCell.buyButton.titleLabel.text = NSLocalizedString(@"Buy", nil);
         productCell.buyButton.titleLabel.font = _buyButtonFont ?: [UIFont systemFontOfSize:24];
     }
-    productCell.buyButton.enabled = ![_helper productPurchased:product.productIdentifier];
+    productCell.buyButton.enabled = ![_purchaseHelper productPurchased:product.productIdentifier];
     [productCell.buyButton removeTarget:self
                                  action:@selector(buyTouched:)
                        forControlEvents:UIControlEventAllEvents];
