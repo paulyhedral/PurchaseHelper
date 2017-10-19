@@ -47,4 +47,4 @@ Copyright © 2016-7 Pilgrimage Software
 
 ## License
 
-See LICENSE for details.
+See [LICENSE](LICENSE) for details.
