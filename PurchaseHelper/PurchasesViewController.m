@@ -193,6 +193,7 @@ estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath {
 forRowAtIndexPath:(NSIndexPath*)indexPath {
 
     SKProduct* product = _products[indexPath.row];
+    _formatter.locale = product.priceLocale;
 
     cell.backgroundColor = [UIColor clearColor];
     cell.representedObject = product;
