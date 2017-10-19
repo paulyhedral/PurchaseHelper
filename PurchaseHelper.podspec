@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "PurchaseHelper"
-  s.version      = "1.2.2"
+  s.version      = "1.3"
   s.summary      = "In-app purchase helper and UI elements"
 
   s.description  = <<-DESC

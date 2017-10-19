@@ -127,6 +127,7 @@
 		5BBC8D0B1BE57F0100371899 /* PurchaseItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PurchaseItemCell.m; sourceTree = "<group>"; };
 		5BBC8D0C1BE57F0100371899 /* PurchasesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PurchasesViewController.h; sourceTree = "<group>"; };
 		5BBC8D0D1BE57F0100371899 /* PurchasesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PurchasesViewController.m; sourceTree = "<group>"; };
+		BF7630171F992726004FD9F3 /* CHANGELOG.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,6 +168,7 @@
 		5B27F4F31C3C78A2006DCC6D /* Documentation */ = {
 			isa = PBXGroup;
 			children = (
+				BF7630171F992726004FD9F3 /* CHANGELOG.md */,
 				5B27F4F01C3C7894006DCC6D /* LICENSE */,
 				5B27F4F11C3C7894006DCC6D /* README.md */,
 			);
