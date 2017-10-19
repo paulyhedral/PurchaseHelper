@@ -9,11 +9,28 @@
 @import UIKit;
 
 
+/**
+ Table cell instances for purchasable items.
+
+ Not meant to be used by client code.
+ */
 @interface PurchaseItemCell : UITableViewCell
 
+/**
+ Private property. Keep off.
+ */
 @property (strong, nonnull, nonatomic) IBOutlet UILabel *nameLabel;
+/**
+ Private property. Keep off.
+ */
 @property (strong, nullable, nonatomic) IBOutlet UILabel *descriptionLabel;
+/**
+ Private property. Keep off.
+ */
 @property (strong, nonnull, nonatomic) IBOutlet UILabel *priceLabel;
+/**
+ Private property. Keep off.
+ */
 @property (strong, nonnull, nonatomic) IBOutlet UIButton *buyButton;
 
 @end
