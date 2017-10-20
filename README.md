@@ -6,24 +6,42 @@ In-app purchase helper and UI elements
 
 ## Usage
 
+### Integration
+
+#### CocoaPods
+
+To use PurchaseHelper with CocoaPods, add the following line to your `Podfile`:
+
+```ruby
+pod 'PurchaseHelper'
+```
+
+#### Carthage
+
+To use PurchaseHelper with Carthage, add the following line to your `Cartfile`:
+
+```carthage
+github "exsortis/PurchaseHelper"
+```
+
 ### Helper
 
 Instantiate the helper once, and keep a strong reference to it somewhere.
 
-```
+```objc
 NSSet<NSString*>* productIds = [NSSet setWithObjects:@"product1", @"product2", @"product3", nil];
 PurchaseHelper* helper = [[PurchaseHelper alloc] initWithProductIdentifiers:productIds keychainAccount:@"MyIAPs"];
 ```
 
 Buy a product:
 
-```
+```objc
 [helper buyProduct:@"product2"];
 ```
 
 And check if a product was bought:
 
-```
+```objc
 if([helper productPurchased:@"product3"]) {
     // show some feature
 }
@@ -34,7 +52,7 @@ else {
 
 Restore completed transactions:
 
-```
+```objc
 [helper restoreCompletedTransactions];
 ```
 
@@ -43,7 +61,7 @@ Restore completed transactions:
 
 Create the view controller, providing it a reference to the helper. Customize its appearance, then display it.
 
-```
+```objc
 PurchasesViewController* vc = [PurchasesViewController new];
 vc.purchaseHelper = helper;
 
@@ -56,7 +74,7 @@ vc.buttonFont = appButtonFont;
 
 If your app needs to know when the purchase completed, setup a notification observer:
 
-```
+```objc
 [[NSNotificationCenter defaultCenter] addObserverForName:ProductPurchasedNotification object:nil queue:nil usingBlock:^(NSNotification* note){
     NSString* productId = note.userInfo[ProductPurchasedNotificationProductIdentifierKey];
     // do something with the notification
@@ -67,7 +85,7 @@ If your app needs to know when the purchase completed, setup a notification obse
 
 Place the helper in test mode when testing the application's in-app purchase functionality.
 
-```
+```objc
 helper.testMode = YES;
 ```
 
