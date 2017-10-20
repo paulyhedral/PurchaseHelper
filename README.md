@@ -11,7 +11,7 @@ In-app purchase helper and UI elements
 Instantiate the helper once, and keep a strong reference to it somewhere.
 
 ```
-NSSet<NSString*>* productIds = [NSSet setWithObjects:@"product1", @"product2", @"product3"];
+NSSet<NSString*>* productIds = [NSSet setWithObjects:@"product1", @"product2", @"product3", nil];
 PurchaseHelper* helper = [[PurchaseHelper alloc] initWithProductIdentifiers:productIds keychainAccount:@"MyIAPs"];
 ```
 
@@ -61,6 +61,14 @@ If your app needs to know when the purchase completed, setup a notification obse
     NSString* productId = note.userInfo[ProductPurchasedNotificationProductIdentifierKey];
     // do something with the notification
 }];
+```
+
+### Test mode
+
+Place the helper in test mode when testing the application's in-app purchase functionality.
+
+```
+helper.testMode = YES;
 ```
 
 ## Copyright
