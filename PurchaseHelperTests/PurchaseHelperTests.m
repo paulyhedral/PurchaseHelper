@@ -7,9 +7,14 @@
 //
 
 #import <XCTest/XCTest.h>
+@import PurchaseHelper;
 
 
-@interface PurchaseHelperTests : XCTestCase
+@interface PurchaseHelperTests : XCTestCase {
+
+@private
+    PurchaseHelper* _helper;
+}
 
 @end
 
@@ -17,7 +22,13 @@
 
 - (void)setUp {
     [super setUp];
+
     // Put setup code here. This method is called before the invocation of each test method in the class.
+    NSSet<NSString*>* productIds = [NSSet setWithObjects:@"product1", @"product2", @"product3", nil];
+    NSString* keychainAccount = @"MyIAPs";
+    _helper = [[PurchaseHelper alloc] initWithProductIdentifiers:productIds
+                                                 keychainAccount:keychainAccount];
+    _helper.testMode = YES;
 }
 
 - (void)tearDown {
@@ -25,16 +36,31 @@
     [super tearDown];
 }
 
-- (void)testExample {
-    // This is an example of a functional test case.
-    // Use XCTAssert and related functions to verify your tests produce the correct results.
+- (void)testInstantiate {
+    NSSet<NSString*>* productIds = [NSSet setWithObjects:@"product1", @"product2", @"product3", nil];
+    NSString* keychainAccount = @"MyIAPs";
+    PurchaseHelper* helper = [[PurchaseHelper alloc] initWithProductIdentifiers:productIds
+                                                                keychainAccount:keychainAccount];
+    XCTAssertNotNil(helper, @"helper should have initialized");
+    XCTAssertTrue(_helper.testMode, @"helper should be in test mode");
 }
 
-- (void)testPerformanceExample {
-    // This is an example of a performance test case.
-    [self measureBlock:^{
-        // Put the code you want to measure the time of here.
+- (void)testRequestProducts {
+    XCTAssertNotNil(_helper, @"helper should have initialized");
+
+
+    [_helper requestProductsWithCompletionHandler:^(BOOL success, NSArray * _Nonnull products) {
+
     }];
+}
+
+- (void)testTestModePurchase {
+    XCTAssertNotNil(_helper, @"helper should have initialized");
+
+    BOOL purchased = [_helper productPurchased:@"whatever"];
+
+    XCTAssertTrue(purchased, @"purchase check should have succeeded.");
+
 }
 
 @end
