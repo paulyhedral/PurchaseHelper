@@ -91,7 +91,7 @@ helper.testMode = YES;
 
 ## Copyright
 
-Copyright Â© 2016-7 Pilgrimage Software
+Copyright © 2016-7 Pilgrimage Software
 
 ## License
 
