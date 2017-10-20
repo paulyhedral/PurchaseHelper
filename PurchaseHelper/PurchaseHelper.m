@@ -129,6 +129,12 @@ NSString* const ProductPurchasedNotificationProductIdentifierKey = @"product";
         return;
     }
 
+    if(_testMode) {
+        NSLog(@"Bypassing actual request, because helper is in test mode.");
+        completionHandler(YES, @[]);
+        return;
+    }
+
     NSLog(@"Starting products request...");
 
     _productsRequest = [[SKProductsRequest alloc] initWithProductIdentifiers:_productIdentifiers];
@@ -146,6 +152,11 @@ NSString* const ProductPurchasedNotificationProductIdentifierKey = @"product";
 
     NSLog(@"Buying %@...", productIdentifier);
 
+    if(_testMode) {
+        NSLog(@"Bypassing product purchase, because helper is in test mode.");
+        return;
+    }
+
     SKProduct* product = _products[productIdentifier];
     SKPayment* payment = [SKPayment paymentWithProduct:product];
     [[SKPaymentQueue defaultQueue] addPayment:payment];
@@ -154,6 +165,7 @@ NSString* const ProductPurchasedNotificationProductIdentifierKey = @"product";
 - (BOOL)productPurchased:(NSString*)productIdentifier {
 
     if(_testMode) {
+        NSLog(@"Returning YES for purchase check, because helper is in test mode.");
         return YES;
     }
 
@@ -172,15 +184,24 @@ NSString* const ProductPurchasedNotificationProductIdentifierKey = @"product";
         }
     }
 
-    return (transactionId != nil &&
-            [_purchasedProductIdentifiers containsObject:productIdentifier]);
+    return (transactionId != nil && [_purchasedProductIdentifiers containsObject:productIdentifier]);
 }
 
 - (void)restoreCompletedTransactions {
+    if(_testMode) {
+        NSLog(@"Ignoring restore request, because helper is in test mode.");
+        return;
+    }
+
     [[SKPaymentQueue defaultQueue] restoreCompletedTransactions];
 }
 
 - (void)clearPurchaseHistory {
+    if(_testMode) {
+        NSLog(@"Ignoring clear request, because helper is in test mode.");
+        return;
+    }
+
     for(NSString* productId in [self productIdentifiers]) {
         [SAMKeychain deletePasswordForService:_keychainAccount
                                       account:productId];
