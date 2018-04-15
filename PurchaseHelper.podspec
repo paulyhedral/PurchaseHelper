@@ -7,7 +7,7 @@ Pod::Spec.new do |s|
                     Some helper classes for managing in-app purchases, including some UI elements.
                    DESC
 
-  s.homepage     = "https://github.com/exsortis/PurchaseHelper"
+  s.homepage     = "https://github.com/paulyhedral/PurchaseHelper"
   # s.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
 
   s.license      = { :type => "MIT", :file => "LICENSE" }
@@ -19,7 +19,7 @@ Pod::Spec.new do |s|
   # s.watchos.deployment_target = "2.0"
   # s.tvos.deployment_target = "9.2"
 
-  s.source       = { :git => "https://github.com/exsortis/PurchaseHelper.git", :tag => s.version.to_s }
+  s.source       = { :git => "https://github.com/paulyhedral/PurchaseHelper.git", :tag => s.version.to_s }
 
   s.source_files  = "PurchaseHelper/**/*.{h,m}"
   s.resources     = [ 'PurchaseHelper/**/*.xib', 'PurchaseHelper/**/*.strings' ]
