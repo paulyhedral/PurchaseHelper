@@ -8,7 +8,7 @@
 
 #import "PurchaseHelper.h"
 
-#import <SAMKeychain/SAMKeychain.h>
+@import SAMKeychain;
 
 
 NSString* const ProductPurchasedNotification = @"ProductPurchased";
