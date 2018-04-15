@@ -47,7 +47,9 @@ NSString* const ProductPurchasedNotificationProductIdentifierKey = @"product";
         //        _requestMap = [NSMutableDictionary new];
         //        _handlerMap = [NSMutableDictionary new];
 
+#if TARGET_OS_IPHONE
         [SAMKeychain setAccessibilityType:kSecAttrAccessibleAlways];
+#endif
 
         // check for previously purchased items
         _purchasedProductIdentifiers = [NSMutableSet new];
@@ -271,7 +273,7 @@ restoreCompletedTransactionsFailedWithError:(NSError*)error {
             case SKPaymentTransactionStateRestored:
                 [self restoreTransaction:tx];
                 break;
-                
+
             default:
                 // do nothing
                 break;
@@ -280,7 +282,7 @@ restoreCompletedTransactionsFailedWithError:(NSError*)error {
 }
 
 - (void)paymentQueueRestoreCompletedTransactionsFinished:(SKPaymentQueue*)queue {
-    
+
 }
 
 @end
