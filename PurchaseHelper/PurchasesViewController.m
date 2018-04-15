@@ -6,6 +6,9 @@
 //  Copyright (c) 2014 Pilgrimage Software. All rights reserved.
 //
 
+@import Foundation;
+#if TARGET_OS_IPHONE
+
 #import "PurchasesViewController.h"
 
 #import "UIControl+RepresentedObject.h"
@@ -223,17 +226,19 @@ forRowAtIndexPath:(NSIndexPath*)indexPath {
     [productCell.buyButton addTarget:self
                               action:@selector(buyTouched:)
                     forControlEvents:UIControlEventTouchUpInside];
-    
+
     productCell.buyButton.representedObject = product;
 }
 
 - (void)tableView:(UITableView*)tableView
 didSelectRowAtIndexPath:(NSIndexPath*)indexPath {
-    
+
     // handle the button press instead
-    
+
     [tableView deselectRowAtIndexPath:indexPath
                              animated:YES];
 }
 
 @end
+
+#endif

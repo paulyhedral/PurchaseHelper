@@ -6,8 +6,10 @@
 //  Copyright (c) 2014 Pilgrimage Software. All rights reserved.
 //
 
-@import UIKit;
+@import Foundation;
+#if TARGET_OS_IPHONE
 
+@import UIKit;
 
 /**
  Table cell instances for purchasable items.
@@ -19,18 +21,20 @@
 /**
  Private property. Keep off.
  */
-@property (strong, nonnull, nonatomic) IBOutlet UILabel *nameLabel;
+@property(strong, nonnull, nonatomic) IBOutlet UILabel *nameLabel;
 /**
  Private property. Keep off.
  */
-@property (strong, nullable, nonatomic) IBOutlet UILabel *descriptionLabel;
+@property(strong, nullable, nonatomic) IBOutlet UILabel *descriptionLabel;
 /**
  Private property. Keep off.
  */
-@property (strong, nonnull, nonatomic) IBOutlet UILabel *priceLabel;
+@property(strong, nonnull, nonatomic) IBOutlet UILabel *priceLabel;
 /**
  Private property. Keep off.
  */
-@property (strong, nonnull, nonatomic) IBOutlet UIButton *buyButton;
+@property(strong, nonnull, nonatomic) IBOutlet UIButton *buyButton;
 
 @end
+
+#endif

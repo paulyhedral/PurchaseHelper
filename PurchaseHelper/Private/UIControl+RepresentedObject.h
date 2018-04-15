@@ -6,11 +6,15 @@
 //  Copyright (c) 2012 Pilgrimage Software. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+@import Foundation;
+#if TARGET_OS_IPHONE
 
+@import UIKit;
 
 @interface UIView (RepresentedObject)
 
-@property (nonatomic, retain) id<NSObject> representedObject;
+@property(nonatomic, retain) id<NSObject> representedObject;
 
 @end
+
+#endif

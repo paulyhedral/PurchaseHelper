@@ -6,6 +6,9 @@
 //  Copyright (c) 2012 Pilgrimage Software. All rights reserved.
 //
 
+@import Foundation;
+#if TARGET_OS_IPHONE
+
 #import "UIControl+RepresentedObject.h"
 
 #import <objc/runtime.h>
@@ -28,3 +31,5 @@ static char kRepresentedObjectKey;
 }
 
 @end
+
+#endif
