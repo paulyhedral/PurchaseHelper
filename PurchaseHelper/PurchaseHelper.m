@@ -26,7 +26,7 @@ NSString* const ProductPurchasedNotificationProductIdentifierKey = @"product";
 
     //    NSMutableDictionary* _requestMap;
     //    NSMutableDictionary* _handlerMap;
-    NSDictionary* _productEquivalenceMap;
+    NSDictionary<NSString*, NSArray<NSString*>*>* _productEquivalenceMap;
 
 }
 
@@ -51,8 +51,8 @@ NSString* const ProductPurchasedNotificationProductIdentifierKey = @"product";
 
         // check for previously purchased items
         _purchasedProductIdentifiers = [NSMutableSet new];
-        NSArray* purchases = [SAMKeychain accountsForService:_keychainAccount];
-        for(NSDictionary* purchaseDict in purchases) {
+        NSArray<NSDictionary<id, NSString*>*>* purchases = [SAMKeychain accountsForService:_keychainAccount];
+        for(NSDictionary<id, NSString*>* purchaseDict in purchases) {
             NSString* productId = purchaseDict[(__bridge id)kSecAttrAccount];
 
             NSLog(@"Previously purchased: %@", productId);
@@ -173,7 +173,7 @@ NSString* const ProductPurchasedNotificationProductIdentifierKey = @"product";
     NSString* transactionId = [SAMKeychain passwordForService:_keychainAccount
                                                       account:productIdentifier];
     if(transactionId == nil) {
-        NSArray* equivalents = _productEquivalenceMap[productIdentifier];
+        NSArray<NSString*>* equivalents = _productEquivalenceMap[productIdentifier];
         for(NSString* equivalentId in equivalents) {
             transactionId = [SAMKeychain passwordForService:_keychainAccount
                                                     account:equivalentId];
@@ -223,7 +223,7 @@ NSString* const ProductPurchasedNotificationProductIdentifierKey = @"product";
 
     NSLog(@"Loaded list of products...");
 
-    NSArray* products = response.products;
+    NSArray<SKProduct*>* products = response.products;
     for(SKProduct* product in products) {
         _products[product.productIdentifier] = product;
         NSLog(@"Found product: %@ %@ %0.2f", product.productIdentifier, product.localizedTitle, product.price.floatValue);

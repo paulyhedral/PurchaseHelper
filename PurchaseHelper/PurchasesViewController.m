@@ -23,7 +23,7 @@
 @implementation PurchasesViewController {
 
 @private
-    NSArray* _products;
+    NSArray<SKProduct*>* _products;
     NSNumberFormatter* _formatter;
 
 }
