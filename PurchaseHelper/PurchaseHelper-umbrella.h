@@ -6,7 +6,12 @@
 //  Copyright © 2015 Pilgrimage Software. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+@import Foundation;
+#if TARGET_OS_IPHONE
+@import UIKit;
+#else
+@import Cocoa;
+#endif
 
 //! Project version number for PurchaseHelper.
 FOUNDATION_EXPORT double PurchaseHelperVersionNumber;
