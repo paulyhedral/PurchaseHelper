@@ -25,14 +25,27 @@ typedef void (^RequestProductsCompletionHandler)(BOOL success, NSArray<SKProduct
  */
 #if TARGET_OS_IPHONE
 UIKIT_EXTERN
+#else
+OBJC_EXTERN
 #endif
 NSString *_Nonnull const ProductPurchasedNotification;
+/**
+ String constant name of the notification that is sent when a product purchase is canceled.
+ */
+#if TARGET_OS_IPHONE
+UIKIT_EXTERN
+#else
+OBJC_EXTERN
+#endif
+NSString* const ProductPurchaseCanceledNotification;
 /**
  String constant name of the user info dictionary key containing the product identifier of the product that was
  purchased.
  */
 #if TARGET_OS_IPHONE
 UIKIT_EXTERN
+#else
+OBJC_EXTERN
 #endif
 NSString *_Nonnull const ProductPurchasedNotificationProductIdentifierKey;
 

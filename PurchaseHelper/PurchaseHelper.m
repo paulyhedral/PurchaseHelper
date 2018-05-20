@@ -12,6 +12,7 @@
 
 
 NSString* const ProductPurchasedNotification = @"ProductPurchased";
+NSString* const ProductPurchaseCanceledNotification = @"ProductPurchaseCanceled";
 NSString* const ProductPurchasedNotificationProductIdentifierKey = @"product";
 
 @implementation PurchaseHelper {
@@ -87,6 +88,12 @@ NSString* const ProductPurchasedNotificationProductIdentifierKey = @"product";
     if(transaction.error.code != SKErrorPaymentCancelled) {
         NSLog(@"Transaction error: %@", transaction.error);
     }
+
+    [[NSNotificationCenter defaultCenter] postNotificationName:ProductPurchaseCanceledNotification
+                                                        object:self
+                                                      userInfo:(@{
+                                                                  ProductPurchasedNotificationProductIdentifierKey : transaction.payment.productIdentifier,
+                                                                  })];
 
     [[SKPaymentQueue defaultQueue] finishTransaction:transaction];
 }
