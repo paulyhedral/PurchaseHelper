@@ -205,6 +205,10 @@ NSString* const ProductPurchasedNotificationProductIdentifierKey = @"product";
     [[SKPaymentQueue defaultQueue] restoreCompletedTransactions];
 }
 
+- (nullable SKProduct*)productInfo:(nonnull NSString*)productIdentifier {
+    return [_products valueForKey:productIdentifier];
+}
+
 - (void)clearPurchaseHistory {
     if(_testMode) {
         NSLog(@"Ignoring clear request, because helper is in test mode.");

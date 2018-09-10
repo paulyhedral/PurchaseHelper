@@ -18,7 +18,15 @@
  @param success Boolean value indicating whether the request succeeded or not.
  @param products An array of SKProduct objects.
  */
-typedef void (^RequestProductsCompletionHandler)(BOOL success, NSArray<SKProduct *> *_Nonnull products);
+typedef void (^RequestProductsCompletionHandler)(BOOL success, NSArray<SKProduct *>* _Nonnull products);
+
+/**
+ Type definition for the a production information request.
+
+ @param success Boolean value indicating whether the request succeeded or not.
+ @param product The product that was request, or <code>NULL</code> if no product was found.
+ */
+typedef void (^RequestProductInfoCompletionHandler)(BOOL success, SKProduct* _Nullable product);
 
 /**
  String constant name of the notification that is sent when a product is purchased.
@@ -92,7 +100,7 @@ NSString *_Nonnull const ProductPurchasedNotificationProductIdentifierKey;
  @param productIdentifier The identifier for the product to purchase. This must be an identifier that was provided
  during instantation.
  */
-- (void)buyProduct:(nonnull NSString *)productIdentifier NS_SWIFT_NAME(buy(productIdentifier:));
+- (void)buyProduct:(nonnull NSString*)productIdentifier NS_SWIFT_NAME(buy(productIdentifier:));
 /**
  Check if the specified product was purchased.
 
@@ -103,11 +111,16 @@ NSString *_Nonnull const ProductPurchasedNotificationProductIdentifierKey;
 
  @return A boolean indicating whether there is a record in the keychain for the purchase of this product.
  */
-- (BOOL)productPurchased:(nonnull NSString *)productIdentifier NS_SWIFT_NAME(isProductPurchased(productIdentifier:));
+- (BOOL)productPurchased:(nonnull NSString*)productIdentifier NS_SWIFT_NAME(isProductPurchased(productIdentifier:));
+
 /**
  Initiate a request to restore completed transactions. Each completed transaction will be recorded in the keychain.
  */
 - (void)restoreCompletedTransactions;
+
+/**
+ */
+- (nullable SKProduct*)productInfo:(nonnull NSString*)productIdentifier NS_SWIFT_NAME(productInfo(for:));
 
 /**
  Clears the keychain of purchase history items.
