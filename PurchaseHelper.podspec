@@ -29,6 +29,7 @@ Pod::Spec.new do |s|
   s.public_header_files = 'PurchaseHelper/*.h'
   s.private_header_files = 'PurchaseHelper/Private/*.h'
   s.requires_arc = true
+  s.compiler_flags = '-Wimplicit-retain-self', '-DALWAYS_SEARCH_USER_PATHS=NO'
 
   s.dependency 'SAMKeychain'
 end
