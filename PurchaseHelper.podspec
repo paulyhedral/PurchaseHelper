@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name = 'PurchaseHelper'
-  s.version = '1.6.1.1'
+  s.version = '1.6.1.2'
   s.summary = 'In-app purchase helper and UI elements'
 
   s.description = <<-DESC
@@ -30,6 +30,8 @@ Pod::Spec.new do |s|
   s.private_header_files = 'PurchaseHelper/Private/*.h'
   s.requires_arc = true
   s.compiler_flags = '-Wimplicit-retain-self', '-DALWAYS_SEARCH_USER_PATHS=NO'
+  s.prefix_header_file = false
+  s.module_name = 'PurchaseHelper'
 
   s.dependency 'SAMKeychain'
 end
