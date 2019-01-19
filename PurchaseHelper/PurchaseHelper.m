@@ -21,13 +21,13 @@ NSString* const ProductPurchasedNotificationProductIdentifierKey = @"product";
     SKProductsRequest* _productsRequest;
     RequestProductsCompletionHandler _completionHandler;
 
-    NSSet<NSString*>* _productIdentifiers;
-    NSMutableSet<NSString*>* _purchasedProductIdentifiers;
-    NSMutableDictionary<NSString*, SKProduct*>* _products;
+    NSSet<ProductIdentifier>* _productIdentifiers;
+    NSMutableSet<ProductIdentifier>* _purchasedProductIdentifiers;
+    NSMutableDictionary<ProductIdentifier, SKProduct*>* _products;
 
     //    NSMutableDictionary* _requestMap;
     //    NSMutableDictionary* _handlerMap;
-    NSDictionary<NSString*, NSArray<NSString*>*>* _productEquivalenceMap;
+    NSDictionary<ProductIdentifier, NSArray<ProductIdentifier>*>* _productEquivalenceMap;
 
 }
 
@@ -38,7 +38,7 @@ NSString* const ProductPurchasedNotificationProductIdentifierKey = @"product";
                             keychainAccount:@""];
 }
 
-- (instancetype)initWithProductIdentifiers:(NSSet*)productIdentifiers
+- (instancetype)initWithProductIdentifiers:(NSSet<ProductIdentifier>*)productIdentifiers
                            keychainAccount:(NSString*)keychainAccount {
     self = [super init];
     if(self) {
@@ -55,8 +55,8 @@ NSString* const ProductPurchasedNotificationProductIdentifierKey = @"product";
         // check for previously purchased items
         _purchasedProductIdentifiers = [NSMutableSet new];
         NSArray<NSDictionary<id, NSString*>*>* purchases = [SAMKeychain accountsForService:_keychainAccount];
-        for(NSDictionary<id, NSString*>* purchaseDict in purchases) {
-            NSString* productId = purchaseDict[(__bridge id)kSecAttrAccount];
+        for(NSDictionary<id, ProductIdentifier>* purchaseDict in purchases) {
+            ProductIdentifier productId = purchaseDict[(__bridge id)kSecAttrAccount];
 
             NSLog(@"Previously purchased: %@", productId);
             [_purchasedProductIdentifiers addObject:productId];
@@ -109,7 +109,7 @@ NSString* const ProductPurchasedNotificationProductIdentifierKey = @"product";
 }
 
 - (void)provideContentForTransaction:(SKPaymentTransaction*)transaction
-                   productIdentifier:(NSString*)productId {
+                   productIdentifier:(ProductIdentifier)productId {
 
     [_purchasedProductIdentifiers addObject:productId];
 
@@ -124,7 +124,7 @@ NSString* const ProductPurchasedNotificationProductIdentifierKey = @"product";
                                                                   })];
 }
 
-- (NSArray*)productIdentifiers {
+- (NSArray<ProductIdentifier>*)productIdentifiers {
     return [_productIdentifiers allObjects];
 }
 
@@ -157,7 +157,7 @@ NSString* const ProductPurchasedNotificationProductIdentifierKey = @"product";
     [_productsRequest start];
 }
 
-- (void)buyProduct:(nonnull NSString*)productIdentifier {
+- (void)buyProduct:(nonnull ProductIdentifier)productIdentifier {
 
     NSLog(@"Buying %@...", productIdentifier);
 
@@ -171,7 +171,7 @@ NSString* const ProductPurchasedNotificationProductIdentifierKey = @"product";
     [[SKPaymentQueue defaultQueue] addPayment:payment];
 }
 
-- (BOOL)productPurchased:(NSString*)productIdentifier {
+- (BOOL)productPurchased:(ProductIdentifier)productIdentifier {
 
     if(_testMode) {
         NSLog(@"Returning YES for purchase check, because helper is in test mode.");
@@ -205,7 +205,7 @@ NSString* const ProductPurchasedNotificationProductIdentifierKey = @"product";
     [[SKPaymentQueue defaultQueue] restoreCompletedTransactions];
 }
 
-- (nullable SKProduct*)productInfo:(nonnull NSString*)productIdentifier {
+- (nullable SKProduct*)productInfo:(nonnull ProductIdentifier)productIdentifier {
     return [_products valueForKey:productIdentifier];
 }
 
@@ -215,7 +215,7 @@ NSString* const ProductPurchasedNotificationProductIdentifierKey = @"product";
         return;
     }
 
-    for(NSString* productId in [self productIdentifiers]) {
+    for(ProductIdentifier productId in [self productIdentifiers]) {
         [SAMKeychain deletePasswordForService:_keychainAccount
                                       account:productId];
         [_purchasedProductIdentifiers removeObject:productId];

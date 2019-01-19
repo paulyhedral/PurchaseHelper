@@ -84,8 +84,8 @@ NSString *_Nonnull const ProductPurchasedNotificationProductIdentifierKey;
  @param productIdentifiers A collection of unique identifiers for the purchasable products that the app will use.
  @param keychainAccount The name of the keychain account to use for storing and managing product purchases.
  */
-- (nonnull instancetype)initWithProductIdentifiers:(nonnull NSSet *)productIdentifiers
-                                   keychainAccount:(nonnull NSString *)keychainAccount NS_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)initWithProductIdentifiers:(nonnull NSSet<ProductIdentifier>*)productIdentifiers
+                                   keychainAccount:(nonnull NSString*)keychainAccount NS_DESIGNATED_INITIALIZER;
 
 /**
  Initiate a request from the iTunes store for the products that correspond to the product identifiers provided
@@ -102,7 +102,7 @@ NSString *_Nonnull const ProductPurchasedNotificationProductIdentifierKey;
  @param productIdentifier The identifier for the product to purchase. This must be an identifier that was provided
  during instantation.
  */
-- (void)buyProduct:(nonnull NSString*)productIdentifier NS_SWIFT_NAME(buy(productIdentifier:));
+- (void)buyProduct:(nonnull ProductIdentifier)productIdentifier NS_SWIFT_NAME(buy(productIdentifier:));
 /**
  Check if the specified product was purchased.
 
@@ -113,7 +113,7 @@ NSString *_Nonnull const ProductPurchasedNotificationProductIdentifierKey;
 
  @return A boolean indicating whether there is a record in the keychain for the purchase of this product.
  */
-- (BOOL)productPurchased:(nonnull NSString*)productIdentifier NS_SWIFT_NAME(isProductPurchased(productIdentifier:));
+- (BOOL)productPurchased:(nonnull ProductIdentifier)productIdentifier NS_SWIFT_NAME(isProductPurchased(productIdentifier:));
 
 /**
  Initiate a request to restore completed transactions. Each completed transaction will be recorded in the keychain.
@@ -121,8 +121,13 @@ NSString *_Nonnull const ProductPurchasedNotificationProductIdentifierKey;
 - (void)restoreCompletedTransactions;
 
 /**
+ Returns a product for the specified identifier.
+
+ @param productIdentifier The identifier of the product.
+
+ @return An SKProduct object for the product, or null if one does not match.
  */
-- (nullable SKProduct*)productInfo:(nonnull NSString*)productIdentifier NS_SWIFT_NAME(productInfo(for:));
+- (nullable SKProduct*)productInfo:(nonnull ProductIdentifier)productIdentifier NS_SWIFT_NAME(productInfo(for:));
 
 /**
  Clears the keychain of purchase history items.
