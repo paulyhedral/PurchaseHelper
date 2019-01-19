@@ -12,6 +12,8 @@
 @import UIKit;
 #endif
 
+typedef NSString *ProductIdentifier NS_EXTENSIBLE_STRING_ENUM;
+
 /**
  Type definition for the request products completion callback.
 
