@@ -9,7 +9,7 @@
 @import Foundation;
 #if TARGET_OS_IPHONE
 
-#import "UIControl+RepresentedObject.h"
+#import "UIView+RepresentedObject.h"
 
 #import <objc/runtime.h>
 

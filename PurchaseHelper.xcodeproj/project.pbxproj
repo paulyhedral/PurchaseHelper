@@ -7,87 +7,88 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5B6A33B81D7CB7A000BABE7E /* SAMKeychain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B6A33AB1D7CB79300BABE7E /* SAMKeychain.framework */; };
-		5B6A33BC1D7CB91000BABE7E /* SAMKeychain.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 5B6A33AB1D7CB79300BABE7E /* SAMKeychain.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		5B6A33CC1D7CDBE800BABE7E /* UIControl+RepresentedObject.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B6A33CA1D7CDBE800BABE7E /* UIControl+RepresentedObject.h */; settings = {ATTRIBUTES = (Private, ); }; };
-		5B6A33CD1D7CDBE800BABE7E /* UIControl+RepresentedObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B6A33CB1D7CDBE800BABE7E /* UIControl+RepresentedObject.m */; };
-		5B70C7681CD65DC3004DA396 /* PurchasesView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B70C76A1CD65DC3004DA396 /* PurchasesView.xib */; };
-		5B70C76B1CD65DC9004DA396 /* PurchaseItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B70C76D1CD65DC9004DA396 /* PurchaseItemCell.xib */; };
-		5B70C7701CD65E00004DA396 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5B70C7721CD65E00004DA396 /* Localizable.strings */; };
 		5BBC8CF81BE57D3600371899 /* PurchaseHelper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BBC8CED1BE57D3600371899 /* PurchaseHelper.framework */; };
-		5BBC8CFD1BE57D3600371899 /* PurchaseHelperTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BBC8CFC1BE57D3600371899 /* PurchaseHelperTests.m */; };
-		5BBC8D0E1BE57F0100371899 /* PurchaseHelper-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5BBC8D071BE57F0100371899 /* PurchaseHelper-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		5BBC8D0F1BE57F0100371899 /* PurchaseHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = 5BBC8D081BE57F0100371899 /* PurchaseHelper.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		5BBC8D101BE57F0100371899 /* PurchaseHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BBC8D091BE57F0100371899 /* PurchaseHelper.m */; };
-		5BBC8D111BE57F0100371899 /* PurchaseItemCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 5BBC8D0A1BE57F0100371899 /* PurchaseItemCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		5BBC8D121BE57F0100371899 /* PurchaseItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BBC8D0B1BE57F0100371899 /* PurchaseItemCell.m */; };
-		5BBC8D131BE57F0100371899 /* PurchasesViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 5BBC8D0C1BE57F0100371899 /* PurchasesViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		5BBC8D141BE57F0100371899 /* PurchasesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BBC8D0D1BE57F0100371899 /* PurchasesViewController.m */; };
+		718A922F21FCA3CF00FF5BDB /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718A922E21FCA3CF00FF5BDB /* Package.swift */; };
+		718A924321FCA44400FF5BDB /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 718A923221FCA44400FF5BDB /* Localizable.strings */; };
+		718A924421FCA44400FF5BDB /* PurchaseItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 718A923421FCA44400FF5BDB /* PurchaseItemCell.xib */; };
+		718A924521FCA44400FF5BDB /* PurchasesView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 718A923621FCA44400FF5BDB /* PurchasesView.xib */; };
+		718A924621FCA44400FF5BDB /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 718A923821FCA44400FF5BDB /* Info.plist */; };
+		718A924721FCA44400FF5BDB /* Identifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718A923A21FCA44400FF5BDB /* Identifier.swift */; };
+		718A924821FCA44400FF5BDB /* UIView+RepresentedObject.h in Headers */ = {isa = PBXBuildFile; fileRef = 718A923B21FCA44400FF5BDB /* UIView+RepresentedObject.h */; };
+		718A924921FCA44400FF5BDB /* UIView+RepresentedObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 718A923C21FCA44400FF5BDB /* UIView+RepresentedObject.m */; };
+		718A924A21FCA44400FF5BDB /* ProductIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718A923D21FCA44400FF5BDB /* ProductIdentifier.swift */; };
+		718A924B21FCA44400FF5BDB /* PurchaseHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = 718A923E21FCA44400FF5BDB /* PurchaseHelper.h */; };
+		718A924C21FCA44400FF5BDB /* PurchaseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718A923F21FCA44400FF5BDB /* PurchaseHelper.swift */; };
+		718A924D21FCA44400FF5BDB /* PurchaseItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718A924021FCA44400FF5BDB /* PurchaseItemCell.swift */; };
+		718A924E21FCA44400FF5BDB /* PurchaseItemCellConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718A924121FCA44400FF5BDB /* PurchaseItemCellConfigurator.swift */; };
+		718A924F21FCA44400FF5BDB /* PurchasesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718A924221FCA44400FF5BDB /* PurchasesViewController.swift */; };
+		718A925421FCBD8400FF5BDB /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 718A925221FCBD8400FF5BDB /* Info.plist */; };
+		718A925521FCBD8400FF5BDB /* PurchaseHelperTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 718A925321FCBD8400FF5BDB /* PurchaseHelperTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		5B6A33AA1D7CB79300BABE7E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5B6A33A01D7CB79200BABE7E /* SAMKeychain.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = E8A666341A844CC400287CA3;
-			remoteInfo = "SAMKeychain-iOS";
-		};
-		5B6A33AC1D7CB79300BABE7E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5B6A33A01D7CB79200BABE7E /* SAMKeychain.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = E8A666551A844D3A00287CA3;
-			remoteInfo = "SAMKeychainTests-iOS";
-		};
-		5B6A33AE1D7CB79300BABE7E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5B6A33A01D7CB79200BABE7E /* SAMKeychain.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = E8A6666F1A844E4100287CA3;
-			remoteInfo = "SAMKeychain-OSX";
-		};
-		5B6A33B01D7CB79300BABE7E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5B6A33A01D7CB79200BABE7E /* SAMKeychain.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = E8A666791A844E4100287CA3;
-			remoteInfo = "SAMKeychainTests-OSX";
-		};
-		5B6A33B21D7CB79300BABE7E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5B6A33A01D7CB79200BABE7E /* SAMKeychain.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 21632D981C925A3C00C40D7D;
-			remoteInfo = "SAMKeychain-tvOS";
-		};
-		5B6A33B41D7CB79300BABE7E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5B6A33A01D7CB79200BABE7E /* SAMKeychain.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 21632DA11C925A3C00C40D7D;
-			remoteInfo = "SAMKeychainTests-tvOS";
-		};
-		5B6A33B61D7CB79300BABE7E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5B6A33A01D7CB79200BABE7E /* SAMKeychain.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 21632DBC1C925B1F00C40D7D;
-			remoteInfo = "SAMKeychain-watchOS";
-		};
-		5B6A33B91D7CB8E500BABE7E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5B6A33A01D7CB79200BABE7E /* SAMKeychain.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = E8A666331A844CC400287CA3;
-			remoteInfo = "SAMKeychain-iOS";
-		};
 		5BBC8CF91BE57D3600371899 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 5BBC8CE41BE57D3600371899 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 5BBC8CEC1BE57D3600371899;
 			remoteInfo = PurchaseHelper;
+		};
+		718A920721FC09E900FF5BDB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 718A91FD21FC09E900FF5BDB /* SAMKeychain.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = E8A666341A844CC400287CA3;
+			remoteInfo = "SAMKeychain-iOS";
+		};
+		718A920921FC09E900FF5BDB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 718A91FD21FC09E900FF5BDB /* SAMKeychain.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = E8A666551A844D3A00287CA3;
+			remoteInfo = "SAMKeychainTests-iOS";
+		};
+		718A920B21FC09E900FF5BDB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 718A91FD21FC09E900FF5BDB /* SAMKeychain.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = E8A6666F1A844E4100287CA3;
+			remoteInfo = "SAMKeychain-OSX";
+		};
+		718A920D21FC09E900FF5BDB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 718A91FD21FC09E900FF5BDB /* SAMKeychain.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = E8A666791A844E4100287CA3;
+			remoteInfo = "SAMKeychainTests-OSX";
+		};
+		718A920F21FC09E900FF5BDB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 718A91FD21FC09E900FF5BDB /* SAMKeychain.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 21632D981C925A3C00C40D7D;
+			remoteInfo = "SAMKeychain-tvOS";
+		};
+		718A921121FC09E900FF5BDB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 718A91FD21FC09E900FF5BDB /* SAMKeychain.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 21632DA11C925A3C00C40D7D;
+			remoteInfo = "SAMKeychainTests-tvOS";
+		};
+		718A921321FC09E900FF5BDB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 718A91FD21FC09E900FF5BDB /* SAMKeychain.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 21632DBC1C925B1F00C40D7D;
+			remoteInfo = "SAMKeychain-watchOS";
+		};
+		718A921521FC09FC00FF5BDB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 718A91FD21FC09E900FF5BDB /* SAMKeychain.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = E8A666331A844CC400287CA3;
+			remoteInfo = "SAMKeychain-iOS";
 		};
 /* End PBXContainerItemProxy section */
 
@@ -98,7 +99,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				5B6A33BC1D7CB91000BABE7E /* SAMKeychain.framework in Copy Frameworks */,
 			);
 			name = "Copy Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -109,24 +109,25 @@
 		5B27F4F01C3C7894006DCC6D /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		5B27F4F11C3C7894006DCC6D /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		5B27F4F41C3C7A8F006DCC6D /* PurchaseHelper.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; path = PurchaseHelper.podspec; sourceTree = "<group>"; };
-		5B6A33A01D7CB79200BABE7E /* SAMKeychain.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SAMKeychain.xcodeproj; path = Submodules/SAMKeychain/SAMKeychain.xcodeproj; sourceTree = "<group>"; };
-		5B6A33CA1D7CDBE800BABE7E /* UIControl+RepresentedObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIControl+RepresentedObject.h"; sourceTree = "<group>"; };
-		5B6A33CB1D7CDBE800BABE7E /* UIControl+RepresentedObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIControl+RepresentedObject.m"; sourceTree = "<group>"; };
-		5B70C7691CD65DC3004DA396 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/PurchasesView.xib; sourceTree = "<group>"; };
-		5B70C76C1CD65DC9004DA396 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/PurchaseItemCell.xib; sourceTree = "<group>"; };
-		5B70C7711CD65E00004DA396 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		5BBC8CED1BE57D3600371899 /* PurchaseHelper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PurchaseHelper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		5BBC8CF21BE57D3600371899 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5BBC8CF71BE57D3600371899 /* PurchaseHelperTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PurchaseHelperTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		5BBC8CFC1BE57D3600371899 /* PurchaseHelperTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PurchaseHelperTests.m; sourceTree = "<group>"; };
-		5BBC8CFE1BE57D3600371899 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5BBC8D071BE57F0100371899 /* PurchaseHelper-umbrella.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PurchaseHelper-umbrella.h"; sourceTree = "<group>"; };
-		5BBC8D081BE57F0100371899 /* PurchaseHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PurchaseHelper.h; sourceTree = "<group>"; };
-		5BBC8D091BE57F0100371899 /* PurchaseHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PurchaseHelper.m; sourceTree = "<group>"; };
-		5BBC8D0A1BE57F0100371899 /* PurchaseItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PurchaseItemCell.h; sourceTree = "<group>"; };
-		5BBC8D0B1BE57F0100371899 /* PurchaseItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PurchaseItemCell.m; sourceTree = "<group>"; };
-		5BBC8D0C1BE57F0100371899 /* PurchasesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PurchasesViewController.h; sourceTree = "<group>"; };
-		5BBC8D0D1BE57F0100371899 /* PurchasesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PurchasesViewController.m; sourceTree = "<group>"; };
+		718A91FD21FC09E900FF5BDB /* SAMKeychain.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SAMKeychain.xcodeproj; path = Submodules/SAMKeychain/SAMKeychain.xcodeproj; sourceTree = "<group>"; };
+		718A922E21FCA3CF00FF5BDB /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
+		718A923321FCA44400FF5BDB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		718A923521FCA44400FF5BDB /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/PurchaseItemCell.xib; sourceTree = "<group>"; };
+		718A923721FCA44400FF5BDB /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/PurchasesView.xib; sourceTree = "<group>"; };
+		718A923821FCA44400FF5BDB /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		718A923A21FCA44400FF5BDB /* Identifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Identifier.swift; sourceTree = "<group>"; };
+		718A923B21FCA44400FF5BDB /* UIView+RepresentedObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+RepresentedObject.h"; sourceTree = "<group>"; };
+		718A923C21FCA44400FF5BDB /* UIView+RepresentedObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+RepresentedObject.m"; sourceTree = "<group>"; };
+		718A923D21FCA44400FF5BDB /* ProductIdentifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductIdentifier.swift; sourceTree = "<group>"; };
+		718A923E21FCA44400FF5BDB /* PurchaseHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PurchaseHelper.h; sourceTree = "<group>"; };
+		718A923F21FCA44400FF5BDB /* PurchaseHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PurchaseHelper.swift; sourceTree = "<group>"; };
+		718A924021FCA44400FF5BDB /* PurchaseItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PurchaseItemCell.swift; sourceTree = "<group>"; };
+		718A924121FCA44400FF5BDB /* PurchaseItemCellConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PurchaseItemCellConfigurator.swift; sourceTree = "<group>"; };
+		718A924221FCA44400FF5BDB /* PurchasesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PurchasesViewController.swift; sourceTree = "<group>"; };
+		718A925221FCBD8400FF5BDB /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		718A925321FCBD8400FF5BDB /* PurchaseHelperTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PurchaseHelperTests.m; sourceTree = "<group>"; };
 		BF7630171F992726004FD9F3 /* CHANGELOG.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -135,7 +136,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5B6A33B81D7CB7A000BABE7E /* SAMKeychain.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -178,43 +178,21 @@
 		5B6A339F1D7CB78400BABE7E /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
-				5B6A33A01D7CB79200BABE7E /* SAMKeychain.xcodeproj */,
+				718A91FD21FC09E900FF5BDB /* SAMKeychain.xcodeproj */,
 			);
 			name = Libraries;
-			sourceTree = "<group>";
-		};
-		5B6A33A11D7CB79200BABE7E /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				5B6A33AB1D7CB79300BABE7E /* SAMKeychain.framework */,
-				5B6A33AD1D7CB79300BABE7E /* SAMKeychainTests-iOS.xctest */,
-				5B6A33AF1D7CB79300BABE7E /* SAMKeychain.framework */,
-				5B6A33B11D7CB79300BABE7E /* SAMKeychainTests-OSX.xctest */,
-				5B6A33B31D7CB79300BABE7E /* SAMKeychain.framework */,
-				5B6A33B51D7CB79300BABE7E /* SAMKeychainTests.xctest */,
-				5B6A33B71D7CB79300BABE7E /* SAMKeychain.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		5B6A33C91D7CDBE800BABE7E /* Private */ = {
-			isa = PBXGroup;
-			children = (
-				5B6A33CA1D7CDBE800BABE7E /* UIControl+RepresentedObject.h */,
-				5B6A33CB1D7CDBE800BABE7E /* UIControl+RepresentedObject.m */,
-			);
-			path = Private;
 			sourceTree = "<group>";
 		};
 		5BBC8CE31BE57D3600371899 = {
 			isa = PBXGroup;
 			children = (
+				718A922E21FCA3CF00FF5BDB /* Package.swift */,
 				5B27F4F21C3C7899006DCC6D /* Configuration */,
 				5B27F4F31C3C78A2006DCC6D /* Documentation */,
-				5BBC8CEF1BE57D3600371899 /* PurchaseHelper */,
-				5BBC8CFB1BE57D3600371899 /* PurchaseHelperTests */,
-				5B6A339F1D7CB78400BABE7E /* Libraries */,
+				718A923021FCA44400FF5BDB /* Sources */,
+				718A925021FCBD8400FF5BDB /* Tests */,
 				5B27F4EC1C3C77F2006DCC6D /* Frameworks */,
+				5B6A339F1D7CB78400BABE7E /* Libraries */,
 				5BBC8CEE1BE57D3600371899 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -228,30 +206,69 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		5BBC8CEF1BE57D3600371899 /* PurchaseHelper */ = {
+		718A91FE21FC09E900FF5BDB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				5B6A33C91D7CDBE800BABE7E /* Private */,
-				5BBC8D071BE57F0100371899 /* PurchaseHelper-umbrella.h */,
-				5BBC8D081BE57F0100371899 /* PurchaseHelper.h */,
-				5BBC8D091BE57F0100371899 /* PurchaseHelper.m */,
-				5BBC8D0A1BE57F0100371899 /* PurchaseItemCell.h */,
-				5BBC8D0B1BE57F0100371899 /* PurchaseItemCell.m */,
-				5BBC8D0C1BE57F0100371899 /* PurchasesViewController.h */,
-				5BBC8D0D1BE57F0100371899 /* PurchasesViewController.m */,
-				5B70C7721CD65E00004DA396 /* Localizable.strings */,
-				5BBC8CF21BE57D3600371899 /* Info.plist */,
-				5B70C76D1CD65DC9004DA396 /* PurchaseItemCell.xib */,
-				5B70C76A1CD65DC3004DA396 /* PurchasesView.xib */,
+				718A920821FC09E900FF5BDB /* SAMKeychain.framework */,
+				718A920A21FC09E900FF5BDB /* SAMKeychainTests-iOS.xctest */,
+				718A920C21FC09E900FF5BDB /* SAMKeychain.framework */,
+				718A920E21FC09E900FF5BDB /* SAMKeychainTests-OSX.xctest */,
+				718A921021FC09E900FF5BDB /* SAMKeychain.framework */,
+				718A921221FC09E900FF5BDB /* SAMKeychainTests.xctest */,
+				718A921421FC09E900FF5BDB /* SAMKeychain.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		718A923021FCA44400FF5BDB /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				718A923121FCA44400FF5BDB /* PurchaseHelper */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		718A923121FCA44400FF5BDB /* PurchaseHelper */ = {
+			isa = PBXGroup;
+			children = (
+				718A923921FCA44400FF5BDB /* Private */,
+				718A923821FCA44400FF5BDB /* Info.plist */,
+				718A923221FCA44400FF5BDB /* Localizable.strings */,
+				718A923D21FCA44400FF5BDB /* ProductIdentifier.swift */,
+				718A923E21FCA44400FF5BDB /* PurchaseHelper.h */,
+				718A923F21FCA44400FF5BDB /* PurchaseHelper.swift */,
+				718A924021FCA44400FF5BDB /* PurchaseItemCell.swift */,
+				718A923421FCA44400FF5BDB /* PurchaseItemCell.xib */,
+				718A924121FCA44400FF5BDB /* PurchaseItemCellConfigurator.swift */,
+				718A923621FCA44400FF5BDB /* PurchasesView.xib */,
+				718A924221FCA44400FF5BDB /* PurchasesViewController.swift */,
 			);
 			path = PurchaseHelper;
 			sourceTree = "<group>";
 		};
-		5BBC8CFB1BE57D3600371899 /* PurchaseHelperTests */ = {
+		718A923921FCA44400FF5BDB /* Private */ = {
 			isa = PBXGroup;
 			children = (
-				5BBC8CFC1BE57D3600371899 /* PurchaseHelperTests.m */,
-				5BBC8CFE1BE57D3600371899 /* Info.plist */,
+				718A923A21FCA44400FF5BDB /* Identifier.swift */,
+				718A923B21FCA44400FF5BDB /* UIView+RepresentedObject.h */,
+				718A923C21FCA44400FF5BDB /* UIView+RepresentedObject.m */,
+			);
+			path = Private;
+			sourceTree = "<group>";
+		};
+		718A925021FCBD8400FF5BDB /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				718A925121FCBD8400FF5BDB /* PurchaseHelperTests */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		718A925121FCBD8400FF5BDB /* PurchaseHelperTests */ = {
+			isa = PBXGroup;
+			children = (
+				718A925221FCBD8400FF5BDB /* Info.plist */,
+				718A925321FCBD8400FF5BDB /* PurchaseHelperTests.m */,
 			);
 			path = PurchaseHelperTests;
 			sourceTree = "<group>";
@@ -263,11 +280,8 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5BBC8D131BE57F0100371899 /* PurchasesViewController.h in Headers */,
-				5BBC8D0E1BE57F0100371899 /* PurchaseHelper-umbrella.h in Headers */,
-				5BBC8D0F1BE57F0100371899 /* PurchaseHelper.h in Headers */,
-				5B6A33CC1D7CDBE800BABE7E /* UIControl+RepresentedObject.h in Headers */,
-				5BBC8D111BE57F0100371899 /* PurchaseItemCell.h in Headers */,
+				718A924821FCA44400FF5BDB /* UIView+RepresentedObject.h in Headers */,
+				718A924B21FCA44400FF5BDB /* PurchaseHelper.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -287,7 +301,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				5B6A33BA1D7CB8E500BABE7E /* PBXTargetDependency */,
+				718A921621FC09FC00FF5BDB /* PBXTargetDependency */,
 			);
 			name = PurchaseHelper;
 			productName = PurchaseHelper;
@@ -323,6 +337,7 @@
 				TargetAttributes = {
 					5BBC8CEC1BE57D3600371899 = {
 						CreatedOnToolsVersion = 7.1;
+						LastSwiftMigration = 1010;
 					};
 					5BBC8CF61BE57D3600371899 = {
 						CreatedOnToolsVersion = 7.1;
@@ -341,8 +356,8 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = 5B6A33A11D7CB79200BABE7E /* Products */;
-					ProjectRef = 5B6A33A01D7CB79200BABE7E /* SAMKeychain.xcodeproj */;
+					ProductGroup = 718A91FE21FC09E900FF5BDB /* Products */;
+					ProjectRef = 718A91FD21FC09E900FF5BDB /* SAMKeychain.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -354,53 +369,53 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		5B6A33AB1D7CB79300BABE7E /* SAMKeychain.framework */ = {
+		718A920821FC09E900FF5BDB /* SAMKeychain.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = SAMKeychain.framework;
-			remoteRef = 5B6A33AA1D7CB79300BABE7E /* PBXContainerItemProxy */;
+			remoteRef = 718A920721FC09E900FF5BDB /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		5B6A33AD1D7CB79300BABE7E /* SAMKeychainTests-iOS.xctest */ = {
+		718A920A21FC09E900FF5BDB /* SAMKeychainTests-iOS.xctest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
 			path = "SAMKeychainTests-iOS.xctest";
-			remoteRef = 5B6A33AC1D7CB79300BABE7E /* PBXContainerItemProxy */;
+			remoteRef = 718A920921FC09E900FF5BDB /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		5B6A33AF1D7CB79300BABE7E /* SAMKeychain.framework */ = {
+		718A920C21FC09E900FF5BDB /* SAMKeychain.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = SAMKeychain.framework;
-			remoteRef = 5B6A33AE1D7CB79300BABE7E /* PBXContainerItemProxy */;
+			remoteRef = 718A920B21FC09E900FF5BDB /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		5B6A33B11D7CB79300BABE7E /* SAMKeychainTests-OSX.xctest */ = {
+		718A920E21FC09E900FF5BDB /* SAMKeychainTests-OSX.xctest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
 			path = "SAMKeychainTests-OSX.xctest";
-			remoteRef = 5B6A33B01D7CB79300BABE7E /* PBXContainerItemProxy */;
+			remoteRef = 718A920D21FC09E900FF5BDB /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		5B6A33B31D7CB79300BABE7E /* SAMKeychain.framework */ = {
+		718A921021FC09E900FF5BDB /* SAMKeychain.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = SAMKeychain.framework;
-			remoteRef = 5B6A33B21D7CB79300BABE7E /* PBXContainerItemProxy */;
+			remoteRef = 718A920F21FC09E900FF5BDB /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		5B6A33B51D7CB79300BABE7E /* SAMKeychainTests.xctest */ = {
+		718A921221FC09E900FF5BDB /* SAMKeychainTests.xctest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
 			path = SAMKeychainTests.xctest;
-			remoteRef = 5B6A33B41D7CB79300BABE7E /* PBXContainerItemProxy */;
+			remoteRef = 718A921121FC09E900FF5BDB /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		5B6A33B71D7CB79300BABE7E /* SAMKeychain.framework */ = {
+		718A921421FC09E900FF5BDB /* SAMKeychain.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = SAMKeychain.framework;
-			remoteRef = 5B6A33B61D7CB79300BABE7E /* PBXContainerItemProxy */;
+			remoteRef = 718A921321FC09E900FF5BDB /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -410,9 +425,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5B70C76B1CD65DC9004DA396 /* PurchaseItemCell.xib in Resources */,
-				5B70C7701CD65E00004DA396 /* Localizable.strings in Resources */,
-				5B70C7681CD65DC3004DA396 /* PurchasesView.xib in Resources */,
+				718A924621FCA44400FF5BDB /* Info.plist in Resources */,
+				718A924321FCA44400FF5BDB /* Localizable.strings in Resources */,
+				718A924421FCA44400FF5BDB /* PurchaseItemCell.xib in Resources */,
+				718A924521FCA44400FF5BDB /* PurchasesView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -420,6 +436,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				718A925421FCBD8400FF5BDB /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -430,10 +447,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5BBC8D141BE57F0100371899 /* PurchasesViewController.m in Sources */,
-				5BBC8D101BE57F0100371899 /* PurchaseHelper.m in Sources */,
-				5B6A33CD1D7CDBE800BABE7E /* UIControl+RepresentedObject.m in Sources */,
-				5BBC8D121BE57F0100371899 /* PurchaseItemCell.m in Sources */,
+				718A924721FCA44400FF5BDB /* Identifier.swift in Sources */,
+				718A924D21FCA44400FF5BDB /* PurchaseItemCell.swift in Sources */,
+				718A924921FCA44400FF5BDB /* UIView+RepresentedObject.m in Sources */,
+				718A924C21FCA44400FF5BDB /* PurchaseHelper.swift in Sources */,
+				718A924A21FCA44400FF5BDB /* ProductIdentifier.swift in Sources */,
+				718A924F21FCA44400FF5BDB /* PurchasesViewController.swift in Sources */,
+				718A922F21FCA3CF00FF5BDB /* Package.swift in Sources */,
+				718A924E21FCA44400FF5BDB /* PurchaseItemCellConfigurator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -441,48 +462,48 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5BBC8CFD1BE57D3600371899 /* PurchaseHelperTests.m in Sources */,
+				718A925521FCBD8400FF5BDB /* PurchaseHelperTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		5B6A33BA1D7CB8E500BABE7E /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "SAMKeychain-iOS";
-			targetProxy = 5B6A33B91D7CB8E500BABE7E /* PBXContainerItemProxy */;
-		};
 		5BBC8CFA1BE57D3600371899 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 5BBC8CEC1BE57D3600371899 /* PurchaseHelper */;
 			targetProxy = 5BBC8CF91BE57D3600371899 /* PBXContainerItemProxy */;
 		};
+		718A921621FC09FC00FF5BDB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "SAMKeychain-iOS";
+			targetProxy = 718A921521FC09FC00FF5BDB /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		5B70C76A1CD65DC3004DA396 /* PurchasesView.xib */ = {
+		718A923221FCA44400FF5BDB /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				5B70C7691CD65DC3004DA396 /* en */,
+				718A923321FCA44400FF5BDB /* en */,
 			);
-			name = PurchasesView.xib;
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
-		5B70C76D1CD65DC9004DA396 /* PurchaseItemCell.xib */ = {
+		718A923421FCA44400FF5BDB /* PurchaseItemCell.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				5B70C76C1CD65DC9004DA396 /* en */,
+				718A923521FCA44400FF5BDB /* en */,
 			);
 			name = PurchaseItemCell.xib;
 			sourceTree = "<group>";
 		};
-		5B70C7721CD65E00004DA396 /* Localizable.strings */ = {
+		718A923621FCA44400FF5BDB /* PurchasesView.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				5B70C7711CD65E00004DA396 /* en */,
+				718A923721FCA44400FF5BDB /* en */,
 			);
-			name = Localizable.strings;
+			name = PurchasesView.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -599,6 +620,7 @@
 		5BBC8D021BE57D3600371899 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -614,12 +636,15 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.pilgrimagesoftware.lib.PurchaseHelper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
 		};
 		5BBC8D031BE57D3600371899 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -635,12 +660,14 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.pilgrimagesoftware.lib.PurchaseHelper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Release;
 		};
 		5BBC8D051BE57D3600371899 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = PurchaseHelperTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.pilgrimagesoftware.lib.PurchaseHelperTests;
@@ -651,6 +678,7 @@
 		5BBC8D061BE57D3600371899 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = PurchaseHelperTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.pilgrimagesoftware.lib.PurchaseHelperTests;
