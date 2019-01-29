@@ -30,11 +30,14 @@ public class PurchaseHelper : NSObject, SKProductsRequestDelegate, SKPaymentTran
     private var products : [ProductIdentifier : SKProduct] = [:]
     private var productEquivalenceMap : [ProductIdentifier : [ProductIdentifier]] = [:]
 
-
+    /**
+     */
     public override init() {
-        NSException().raise()
+        fatalError("init() not implemented.")
     }
 
+    /**
+     */
     public init(productIdentifiers : Set<ProductIdentifier>, keychainAccount : String) {
         self.productIdentifiers = productIdentifiers
         self.keychainAccount = keychainAccount
@@ -51,6 +54,8 @@ public class PurchaseHelper : NSObject, SKProductsRequestDelegate, SKPaymentTran
                 purchasedProductIdentifiers.insert(ProductIdentifier(stringLiteral: productId))
             }
         }
+
+        super.init()
 
         SKPaymentQueue.default().add(self)
     }
@@ -96,9 +101,14 @@ public class PurchaseHelper : NSObject, SKProductsRequestDelegate, SKPaymentTran
 
         self.purchasedProductIdentifiers.insert(productIdentifier)
 
-        SAMKeychain.setPassword(transaction.transactionIdentifier,
-                                forService: self.keychainAccount,
-                                account: productIdentifier.id.rawValue)
+        if let transactionId = transaction.transactionIdentifier {
+            SAMKeychain.setPassword(transactionId,
+                                    forService: self.keychainAccount,
+                                    account: productIdentifier.id.rawValue)
+        }
+        else {
+            NSLog("Transaction '\(transaction)' did not contain an identifier, so we could not store the purchase on the keychain.")
+        }
 
         NotificationCenter.default.post(name: ProductPurchasedNotification,
                                         object:self,
@@ -110,6 +120,12 @@ public class PurchaseHelper : NSObject, SKProductsRequestDelegate, SKPaymentTran
 
     // MARK: - Public API
 
+    /**
+     Initiates a request to get the products available for this application.
+
+     - important: This should be performed before any other operations.
+     - parameter completionHandler: The handler to call when the request is completed.
+     */
     public func requestProducts(with completionHandler : @escaping RequestProductsCompletionHandler) {
 
         guard self.productsRequest == nil else {
@@ -137,6 +153,11 @@ public class PurchaseHelper : NSObject, SKProductsRequestDelegate, SKPaymentTran
         self.productsRequest?.start()
     }
 
+    /**
+     Initiates a purchase of the specified product.
+
+     - parameter productIdentifier: The product to purchase
+     */
     public func buy(productIdentifier : ProductIdentifier) {
         NSLog("Buying \(productIdentifier)...")
 
@@ -154,6 +175,12 @@ public class PurchaseHelper : NSObject, SKProductsRequestDelegate, SKPaymentTran
         SKPaymentQueue.default().add(payment)
     }
 
+    /**
+     Checks if the specified product has been purchased.
+
+     - parameter productIdentifier: The product to check
+     - returns: A Bool indicating if the product has been recorded as purchased.
+     */
     public func isProductPurchased(productIdentifier : ProductIdentifier) -> Bool {
 
         guard !self.testMode else {
@@ -171,7 +198,7 @@ public class PurchaseHelper : NSObject, SKProductsRequestDelegate, SKPaymentTran
             let equivalents = self.productEquivalenceMap[productIdentifier] {
             for equivalentId in equivalents {
                 if let tId = SAMKeychain.password(forService: self.keychainAccount,
-                                                  account: equivalentId.id.rawValue) as? String {
+                                                  account: equivalentId.id.rawValue) {
                     transactionId = tId
                     productId = equivalentId.id.rawValue
                     break
@@ -184,6 +211,10 @@ public class PurchaseHelper : NSObject, SKProductsRequestDelegate, SKPaymentTran
         return self.purchasedProductIdentifiers.contains(ProductIdentifier(stringLiteral: productId))
     }
 
+    /**
+     Initiates a restore of prior transactions, so that the keychain and purchase history can be
+     kept up-to-date.
+     */
     public func restoreCompletedTransactions() {
         guard !self.testMode else {
             NSLog("Ignoring restore request, because helper is in test mode.")
@@ -193,10 +224,19 @@ public class PurchaseHelper : NSObject, SKProductsRequestDelegate, SKPaymentTran
         SKPaymentQueue.default().restoreCompletedTransactions()
     }
 
+    /**
+     Retrieves the SKProduct object for the specified product.
+
+     - parameter productIdentifier: The product identifier to retrieve
+     - returns: An SKProduct object, or `nil` if one isn't found for the identifier.
+     */
     public func productInfo(_ productIdentifier : ProductIdentifier) -> SKProduct? {
         return self.products[productIdentifier]
     }
 
+    /**
+     Clears all purchase history items from the keychain.
+     */
     public func clearPurchaseHistory() {
         guard !self.testMode else {
             NSLog("Ignoring clear request, because helper is in test mode.")
@@ -222,7 +262,7 @@ public class PurchaseHelper : NSObject, SKProductsRequestDelegate, SKPaymentTran
             NSLog("Found product: \(product.productIdentifier) \(product.localizedTitle) \(product.price.floatValue)")
         }
 
-        self.completionHandler?(true, Array<ProductIdentifier>(products.values))
+        self.completionHandler?(true, Array<SKProduct>(self.products.map({ $1 })))
     }
 
     public func request(_ request : SKRequest, didFailWithError error : Error) {

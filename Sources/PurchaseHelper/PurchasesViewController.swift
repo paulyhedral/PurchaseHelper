@@ -16,10 +16,7 @@ private func color(decimal : Int) -> CGFloat {
     return CGFloat(decimal) / 255.0
 }
 
-public class PurchasesViewController : UIViewController, UITableViewDataSource, UITableViewDelegate {
-
-    public var showRestoreButton : Bool = false
-    public let purchaseHelper : PurchaseHelper
+public class PurchasesViewController : UIViewController, UITableViewDelegate {
 
     @IBOutlet weak var backingView : UIView!
     @IBOutlet weak var contentContainer : UIView!
@@ -29,24 +26,23 @@ public class PurchasesViewController : UIViewController, UITableViewDataSource, 
     @IBOutlet weak var tableView : UITableView!
     @IBOutlet weak var noPurchasesLabel : UILabel!
 
+    public var showRestoreButton : Bool = false
+    public var dataSource : ProductsDataSource? {
+        didSet {
+            self.tableView?.dataSource = dataSource
+        }
+    }
+    public var purchaseHelper : PurchaseHelper?
     public var titleFont : UIFont?
     public var buttonFont : UIFont?
     public var emptyListFont : UIFont?
-    public var productNameFont : UIFont?
-    public var productDescriptionFont : UIFont?
-    public var priceLabelFont : UIFont?
-    public var buyButtonFont : UIFont?
 
-    private var products : [SKProduct] = []
-
-    public init(purchaseHelper : PurchaseHelper) {
-        self.purchaseHelper = purchaseHelper
-
+    public init() {
         let thisBundle = Bundle(for: PurchasesViewController.self)
         super.init(nibName: "PurchasesView", bundle: thisBundle)
     }
 
-    required init?(coder aDecoder: NSCoder) {
+    public required init?(coder decoder : NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 
@@ -90,27 +86,27 @@ public class PurchasesViewController : UIViewController, UITableViewDataSource, 
             let productId = userInfo[ProductPurchasedNotificationProductIdentifierKey] as? ProductIdentifier else { return }
 
         DispatchQueue.main.async {
-            for product in self.products {
-                let pId = ProductIdentifier(stringLiteral: product.productIdentifier)
-                if pId == productId,
-                    let index = self.products.index(where: { $0 == product }) {
-                    let indexPath = IndexPath(row: index, section: 0)
-                    self.tableView.reloadRows(at: [indexPath], with: .automatic)
-                    return
-                }
-            }
+//            for product in self.products {
+//                let pId = ProductIdentifier(stringLiteral: product.productIdentifier)
+//                if pId == productId,
+//                    let index = self.products.index(where: { $0 == product }) {
+//                    let indexPath = IndexPath(row: index, section: 0)
+//                    self.tableView.reloadRows(at: [indexPath], with: .automatic)
+//                    return
+//                }
+//            }
 
             // new product, reload the whole table
             self.tableView.reloadData()
         }
     }
 
-    public override func viewDidAppear(_ animated: Bool) {
+    public override func viewDidAppear(_ animated : Bool) {
         super.viewDidAppear(animated)
 
-        self.purchaseHelper.requestProducts(with: { success, products in
+        self.purchaseHelper?.requestProducts(with: { success, products in
             if success, products.count > 0 {
-                self.products = products
+//                self.products = products
 
                 DispatchQueue.main.async {
                     self.noPurchasesLabel.isHidden = true
@@ -128,11 +124,11 @@ public class PurchasesViewController : UIViewController, UITableViewDataSource, 
         })
     }
 
-    public override var prefersStatusBarHidden: Bool {
+    public override var prefersStatusBarHidden : Bool {
         return false
     }
 
-    public override var preferredStatusBarStyle: UIStatusBarStyle {
+    public override var preferredStatusBarStyle : UIStatusBarStyle {
         return .lightContent
     }
 
@@ -144,50 +140,35 @@ public class PurchasesViewController : UIViewController, UITableViewDataSource, 
     }
 
     @IBAction func restoreTouched(_ sender : UIButton) {
-        self.purchaseHelper.restoreCompletedTransactions()
+        self.purchaseHelper?.restoreCompletedTransactions()
     }
 
     @IBAction func buyTouched(_ sender : UIButton) {
 
         sender.isEnabled = false
 
-        if let product = sender.representedObject as? SKProduct {
-            self.purchaseHelper.buy(product: product.productIdentifier)
-        }
+//        if let product = sender.representedObject as? SKProduct {
+//            self.purchaseHelper.buy(product: product.productIdentifier)
+//        }
     }
 
 
-    // MARK: - Table view data source and delegate methods
+    // MARK: - Table view delegate methods
 
-    public func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-
-    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.products.count
-    }
-
-    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Product", for: indexPath) as! PurchaseItemCell
-
-        let product = self.products[indexPath.row]
-        PurchaseItemCellConfigurator(cell).configure(product: product,
-                                                     buyAction: #selector(PurchasesViewController.buyTouched(_:)),
-                                                     state: self.purchaseHelper.isProductPurchased(productIdentifier: ProductIdentifier(stringLiteral: product.productIdentifier)) ? .purchased : .purchasable,
-                                                     productNameFont: self.productNameFont,
-                                                     productDescriptionFont: self.productDescriptionFont,
-                                                     priceLabelFont: self.priceLabelFont,
-                                                     buyButtonFont: self.buyButtonFont)
-
-        return cell
-    }
-
-    public func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
-        return UITableView.automaticDimension
-    }
-
-    public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    public func tableView(_ tableView : UITableView, didSelectRowAt indexPath : IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+
+        guard let dataSource = self.dataSource else {
+            NSLog("No data source provided.")
+            return
+        }
+        guard let purchaseHelper = self.purchaseHelper else {
+            NSLog("No purchase helper provided.")
+            return
+        }
+
+        let product = dataSource.products[indexPath.row]
+        let command = PurchaseCommand(productId: ProductIdentifier(stringLiteral: product.productIdentifier)).execute(with: purchaseHelper)
     }
 
 }

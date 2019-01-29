@@ -10,8 +10,12 @@ import Foundation
 import StoreKit
 
 
+/**
+ */
 public struct ProductIdentifier : Hashable {
 
+    /**
+     */
     public let id : Identifier<SKProduct>
 
 }
@@ -19,6 +23,8 @@ public struct ProductIdentifier : Hashable {
 
 extension ProductIdentifier : ExpressibleByStringLiteral {
 
+    /**
+     */
     public init(stringLiteral value : String) {
         self.id = Identifier<SKProduct>(stringLiteral: value)
     }

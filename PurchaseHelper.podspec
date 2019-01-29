@@ -27,6 +27,7 @@ Pod::Spec.new do |s|
   s.private_header_files    = 'Sources/PurchaseHelper/Private/*.h'
   s.requires_arc            = true
   s.compiler_flags          = '-Wimplicit-retain-self', '-DALWAYS_SEARCH_USER_PATHS=NO'
+  s.swift_version           = '4.2'
   s.prefix_header_file      = false
   s.module_name             = 'PurchaseHelper'
 
