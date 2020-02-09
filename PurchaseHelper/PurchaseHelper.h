@@ -38,7 +38,7 @@ UIKIT_EXTERN
 #else
 OBJC_EXTERN
 #endif
-NSString *_Nonnull const ProductPurchasedNotification;
+NSString* _Nonnull const ProductPurchasedNotification;
 /**
  String constant name of the notification that is sent when a product purchase is canceled.
  */
@@ -57,7 +57,7 @@ UIKIT_EXTERN
 #else
 OBJC_EXTERN
 #endif
-NSString *_Nonnull const ProductPurchasedNotificationProductIdentifierKey;
+NSString* _Nonnull const ProductPurchasedNotificationProductIdentifierKey;
 
 /**
  Instances of this class handle product purchasing, including tracking of previously purchased products using
