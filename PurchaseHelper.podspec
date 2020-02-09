@@ -12,7 +12,7 @@ Pod::Spec.new do |s|
 
   s.license = { type: 'MIT', file: 'LICENSE' }
   s.author = { 'Paul Schifferer' => 'paul@schifferers.net' }
-  s.social_media_url = 'https://twitter.com/paulyhedral'
+  s.social_media_url = 'https://wanderingmonster.org'
 
   s.ios.deployment_target = '9.3'
   s.osx.deployment_target = '10.11'
