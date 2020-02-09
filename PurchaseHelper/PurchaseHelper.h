@@ -47,7 +47,7 @@ UIKIT_EXTERN
 #else
 OBJC_EXTERN
 #endif
-NSString* const ProductPurchaseCanceledNotification;
+NSString* _Nonnull const ProductPurchaseCanceledNotification;
 /**
  String constant name of the user info dictionary key containing the product identifier of the product that was
  purchased.
